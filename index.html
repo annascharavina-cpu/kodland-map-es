@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kodland Universe — Карта приключений</title>
+  <link rel="stylesheet" href="css/styles.css?v=2" />
+  <link rel="stylesheet" href="css/animations.css?v=2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- ── View-only banner ── -->
+    <div id="view-banner" class="view-banner hidden">
+      <span id="view-banner-text">👁 Режим просмотра</span>
+    </div>
+
+    <!-- ── Header ── -->
+    <header class="header">
+
+      <!-- Profile -->
+      <div class="profile-section">
+        <button class="avatar-btn" id="avatar-btn" title="Изменить аватар">
+          <span id="avatar-display">🧑‍💻</span>
+        </button>
+        <div class="profile-info">
+          <div class="profile-name-wrap">
+            <span class="profile-name" id="profile-name">Восстановитель</span>
+            <button class="profile-edit-btn" id="profile-edit-btn" title="Изменить имя">✏️</button>
+          </div>
+          <div class="header-course" id="header-course">Kodland Universe</div>
+        </div>
+      </div>
+
+      <div class="header-spacer"></div>
+
+      <!-- Stats -->
+      <div class="stat-item">
+        <span class="stat-label" id="stat-worlds-label">Миры</span>
+        <span class="stat-value" id="stat-worlds">—</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label" id="stat-proj-label">Проекты</span>
+        <span class="stat-value" id="stat-proj">—</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label" id="stat-chal-label">Челленджи</span>
+        <span class="stat-value" id="stat-chal">—</span>
+      </div>
+      <div class="stat-item stat-progress">
+        <span class="stat-label" id="stat-prog-label">Прогресс</span>
+        <div class="progress-track">
+          <div class="progress-fill" id="stat-progress-fill"></div>
+        </div>
+        <span class="stat-pct" id="stat-pct">0%</span>
+      </div>
+
+      <!-- Share -->
+      <button class="share-btn" id="share-btn" title="Поделиться прогрессом">
+        🔗 Share
+      </button>
+    </header>
+
+    <!-- ── Map ── -->
+    <main class="map-container">
+      <div class="map-wrapper">
+        <svg
+          id="adventure-map"
+          class="adventure-map"
+          viewBox="0 0 1280 640"
+          preserveAspectRatio="xMidYMid meet"
+          xmlns="http://www.w3.org/2000/svg"
+        ></svg>
+      </div>
+    </main>
+
+    <!-- ── View-mode project links ── -->
+    <div id="view-projects" class="view-projects hidden">
+      <div id="view-projects-inner" class="view-projects-inner"></div>
+    </div>
+
+    <!-- ── Challenge Bar ── -->
+    <div class="challenge-bar">
+      <span class="challenge-bar-label">Артефакты</span>
+      <div class="challenge-bar-items" id="challenge-bar-items"></div>
+      <div class="challenge-bar-empty" id="challenge-bar-empty">Артефакты появятся по мере прохождения</div>
+    </div>
+
+    <!-- ── Code Panel ── -->
+    <div class="code-panel" id="code-panel">
+
+      <!-- Input -->
+      <div class="code-input-group">
+        <div class="code-input-label">Enter Fragment Code</div>
+        <div class="code-input-row">
+          <input
+            type="text"
+            id="code-input"
+            class="code-input"
+            placeholder="STAR-TECH-OPEN"
+            maxlength="24"
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+          />
+          <button id="code-btn" class="code-btn">Restore Connection</button>
+        </div>
+        <div class="code-message" id="code-message"></div>
+        <div class="server-warn" id="server-warn"></div>
+      </div>
+
+      <!-- Actions -->
+      <div class="panel-actions">
+        <button class="panel-action-btn" id="projects-btn">📎 Projects</button>
+        <div class="legend">
+          <div class="legend-item"><span class="legend-dot legend-dot--project"></span>Project</div>
+          <div class="legend-item"><span class="legend-dot legend-dot--challenge"></span>Artifact</div>
+        </div>
+      </div>
+
+      <!-- History -->
+      <div class="code-history" id="code-history"></div>
+
+    </div>
+
+  </div><!-- .app -->
+
+  <!-- ── Avatar picker ── -->
+  <div id="avatar-picker" class="avatar-picker hidden">
+    <div id="avatar-picker-grid" class="avatar-picker-grid"></div>
+  </div>
+
+  <!-- ── Name modal ── -->
+  <div id="name-modal" class="name-modal hidden">
+    <div class="name-modal-inner">
+      <div class="name-modal-title">Имя Восстановителя</div>
+      <input id="name-input" class="name-input" type="text"
+        placeholder="Введи своё имя" maxlength="32" />
+      <div class="name-modal-actions">
+        <button id="name-save-btn"   class="code-btn">Сохранить</button>
+        <button id="name-cancel-btn" class="name-cancel-btn">Отмена</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Projects panel ── -->
+  <div id="projects-panel" class="projects-panel hidden">
+    <div class="projects-panel-header">
+      <span>📎 Мои проекты</span>
+      <button id="projects-close" class="panel-close-btn">✕</button>
+    </div>
+    <div id="projects-list" class="projects-list">
+      <div class="projects-empty">Восстанови проекты на карте, чтобы добавить ссылки</div>
+    </div>
+  </div>
+
+  <!-- ── Share toast ── -->
+  <div id="share-toast" class="share-toast hidden">🔗 Ссылка скопирована!</div>
+
+  <!-- ── Reactions toast ── -->
+  <div id="reactions-toast" class="share-toast reactions-toast hidden">🎉 Реакции получены!</div>
+
+  <!-- ── Modal overlay ── -->
+  <div id="modal-overlay" class="modal-overlay hidden"></div>
+
+  <!-- ── Unlock modal ── -->
+  <div id="unlock-modal" class="unlock-modal hidden">
+    <div class="unlock-icon"       id="unlock-icon">✨</div>
+    <div class="unlock-title"      id="unlock-title">Восстановлено!</div>
+    <div class="unlock-activation" id="unlock-activation"></div>
+    <button id="unlock-close" class="unlock-close-btn">Continue →</button>
+  </div>
+
+  <!-- Map tooltip -->
+  <div id="map-tooltip" class="map-tooltip">
+    <div class="tt-badge" id="tt-badge"></div>
+    <div class="tt-title" id="tt-title"></div>
+    <div class="tt-desc"  id="tt-desc"></div>
+  </div>
+
+  <script type="module" src="js/app.js?v=3"></script>
+</body>
+</html>

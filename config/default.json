@@ -1,0 +1,234 @@
+{
+  "courseId": "kodland-demo",
+  "courseName": "Разлом Созидания · Kodland Universe",
+  "version": "2.0",
+
+  "supabase": {
+    "url": "https://ysrbkcvmphhywwrgpqxv.supabase.co",
+    "key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlzcmJrY3ZtcGhoeXd3cmdwcXh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczNzkxOTUsImV4cCI6MjA5Mjk1NTE5NX0.yMtp0he8aZAVdMBiG3DMzXWf8BEfT699tCRivxxljrk"
+  },
+
+  "mapConfig": {
+    "width": 1280,
+    "height": 640,
+    "backgroundColor": "#00041c"
+  },
+
+  "worlds": [
+    {
+      "id": 1,
+      "name": "Технополис",
+      "imageUrl": "assets/v1_24.png",
+      "x": 198, "y": 11, "width": 234, "height": 234,
+      "desc": "Город снова принял первый сигнал. Башни зажглись, мосты начали соединяться, а старые механизмы показали карту повреждений всего сектора. Технополис передаёт главный принцип Создателей: любая большая система начинается с понятной структуры.",
+      "lockedDesc": "За тёмными башнями слышен слабый гул машин, но город больше не отвечает на сигналы Ядра. Его мосты зависли в воздухе, схемы погасли, а главная сеть потеряла связь с другими мирами. Чтобы войти, нужно доказать: ты понимаешь, как устроена система."
+    },
+    {
+      "id": 2,
+      "name": "Огненные Земли",
+      "imageUrl": "assets/v1_23.png",
+      "x": 77, "y": 219, "width": 278, "height": 206,
+      "desc": "Пламя больше не разрушает всё вокруг. Оно стало управляемым источником энергии. Смелость означает не идеальный старт, а готовность начать, проверить, исправить и продолжить. Огненные Земли возвращают сектору импульс действия.",
+      "lockedDesc": "Из трещин поднимается жар, а в центре мира горит нестабильный кристалл. Здесь нельзя пройти только с осторожностью. Нужно научиться действовать, даже когда нет полной уверенности."
+    },
+    {
+      "id": 3,
+      "name": "Криосфера",
+      "imageUrl": "assets/v1_22.png",
+      "x": 215, "y": 422, "width": 368, "height": 205,
+      "desc": "Лёд больше не удерживает мир в неподвижности. Кристалл начал светиться ровным светом, а замёрзшие улицы превратились в прозрачные маршруты. Порядок нужен не чтобы ограничивать творчество, а чтобы идея не развалилась по дороге.",
+      "lockedDesc": "Ледяной город застыл вокруг огромного кристалла. В нём сохранились идеальные формы, но движение почти остановилось. Здесь всё слишком хрупкое: один неверный шаг может расколоть мост, башню или план."
+    },
+    {
+      "id": 4,
+      "name": "Бездна",
+      "imageUrl": "assets/v1_21.png",
+      "x": 728, "y": 410, "width": 229, "height": 230,
+      "desc": "Разлом не исчез, но перестал быть угрозой. Теперь он показывает скрытые пути внутри ошибок. Многие «провалы» оказались незавершёнными версиями будущих открытий. Бездна возвращает способность учиться через сложность.",
+      "lockedDesc": "Внизу пульсирует фиолетовый разлом. Он притягивает незавершённые идеи, сломанные попытки и всё, что было брошено из-за ошибок. Но старые записи говорят: тот, кто не боится смотреть в Бездну, учится находить решения там, где раньше видел только провал."
+    },
+    {
+      "id": 5,
+      "name": "Лес Элементов",
+      "imageUrl": "assets/v1_25.png",
+      "x": 815, "y": 219, "width": 399, "height": 223,
+      "desc": "Корни снова начали соединяться под землёй, а кроны деревьев зажглись мягким светом. Лес ответил на действия Восстановителя. Проект становится сильнее, когда автор умеет принимать обратную связь и видеть ценность в совместной работе.",
+      "lockedDesc": "Светящиеся деревья всё ещё живы, но их корни разорваны. Идеи здесь появляются как маленькие ростки, но без связи, поддержки и обмена они быстро гаснут. Чтобы открыть лес, нужно показать: развитие происходит не в одиночку."
+    },
+    {
+      "id": 6,
+      "name": "Небесный Пик",
+      "imageUrl": "assets/v1_26.png",
+      "x": 808, "y": 19, "width": 328, "height": 183,
+      "desc": "Кристаллы Пика приняли свет восстановленных миров и собрали его в единый луч. С высоты видно: каждый проект, каждый навык оставляют след на карте. Небесный Пик возвращает стратегическое видение — понимание, как отдельные действия складываются в мастерство.",
+      "lockedDesc": "Кристальный остров висит высоко над сектором. Его вершины почти не видны сквозь холодное сияние, а путь к ним оборван. Раньше с Небесного Пика Создатели видели, как связаны все миры. Теперь этот взгляд утрачен."
+    },
+    {
+      "id": 7,
+      "name": "Затерянные Руины",
+      "imageUrl": "assets/v1_27.png",
+      "x": 475, "y": 11, "width": 298, "height": 167,
+      "desc": "Символы на камнях сложились в первую часть хроники Kodland Universe. Ядро разрушилось, когда Создатели перестали соединять знания, действия и рефлексию. Руины открывают направление следующей экспедиции.",
+      "lockedDesc": "Среди разрушенных башен мерцают старые символы Создателей. Этот мир не мёртв — он ждёт того, кто сможет прочитать его следы. В руинах спрятаны знания о том, почему Ядро начало разрушаться."
+    }
+  ],
+
+  "connectors": [],
+
+  "decorative": [
+    { "id": "bg-deco", "imageUrl": "assets/v3_5.png", "x": 353, "y": 178, "width": 515, "height": 288 }
+  ],
+
+  "projects": [
+    {
+      "id": "proj-1", "worldId": 1,
+      "name": "Кодекс Создателей",
+      "desc": "Живой Кодекс у входа в сектор — он записывает навыки Восстановителя и связывает Adventure Map со Skill Map. Страницы потемнели, а символы распались на фрагменты. Без него сектор не может запоминать прогресс.",
+      "broken": { "url": "assets/v1_30.png", "x": 72,   "y": 94,  "width": 114, "height": 128 },
+      "fixed":  { "url": "assets/v1_31.png", "x": 53,   "y": 69,  "width": 153, "height": 153 }
+    },
+    {
+      "id": "proj-3", "worldId": 3,
+      "name": "Щит Равновесия",
+      "desc": "Древний защитный механизм между Криосферой и Огненными Землями. Он удерживал баланс между импульсом действия и точностью исполнения. Кристалл внутри почти погас — и энергия миров стала слишком резкой или слишком неподвижной.",
+      "broken": { "url": "assets/v1_33.png", "x": 121,  "y": 439, "width": 94,  "height": 120 },
+      "fixed":  { "url": "assets/v1_32.png", "x": 106,  "y": 426, "width": 123, "height": 133 }
+    },
+    {
+      "id": "proj-4", "worldId": 4,
+      "name": "Хроносфера",
+      "desc": "Механизм рефлексии и времени. Его кольца застыли, потоки внутри сбились. Без неё Восстановитель видит только текущую задачу и не может понять, как изменился за время пути.",
+      "broken": { "url": "assets/v1_39.png", "x": 595,  "y": 458, "width": 85,  "height": 91  },
+      "fixed":  { "url": "assets/v1_38.png", "x": 567,  "y": 440, "width": 145, "height": 145 }
+    },
+    {
+      "id": "proj-5", "worldId": 5,
+      "name": "Древо Жизни",
+      "desc": "Живой центр Леса Элементов. Через его корни идеи разных учеников, проектов и миров могли усиливать друг друга. Ветви всё ещё светятся, но корни потеряли связь с землёй.",
+      "broken": { "url": "assets/v1_35.png", "x": 957,  "y": 439, "width": 146, "height": 146 },
+      "fixed":  { "url": "assets/v1_34.png", "x": 957,  "y": 439, "width": 146, "height": 146 }
+    },
+    {
+      "id": "proj-6", "worldId": 6,
+      "name": "Энергокристалл",
+      "desc": "Кристальный источник на границе Небесного Пика. Он собирает энергию восстановленных миров и превращает её в сигнал для дальних секторов Kodland Universe. Треснул и светится неровно — сигнал не может пройти дальше.",
+      "broken": { "url": "assets/v1_37.png", "x": 1121, "y": 128, "width": 117, "height": 126 },
+      "fixed":  { "url": "assets/v1_36.png", "x": 1120, "y": 128, "width": 120, "height": 126 }
+    }
+  ],
+
+  "challenges": [
+    {
+      "id": "chal-1", "worldId": 1,
+      "name": "Компас Намерения",
+      "desc": "Этот артефакт появился, потому что ты сформулировал цель и выбрал первый понятный шаг. Компас не показывает весь путь сразу — но помогает не потеряться в начале. Сильная работа начинается с ясного направления, а не с идеального плана.",
+      "imageUrl": "assets/v1_50.png", "x": 432,  "y": 23,  "width": 58, "height": 58
+    },
+    {
+      "id": "chal-2", "worldId": 2,
+      "name": "Факел Действия",
+      "desc": "Этот артефакт появился, потому что ты сделал шаг, даже когда не было полной уверенности. Огненные Земли принимают только тех, кто умеет начинать. Факел горит — значит, импульс действия теперь с тобой.",
+      "imageUrl": "assets/v1_52.png", "x": 410,  "y": 138, "width": 78, "height": 78
+    },
+    {
+      "id": "chal-3", "worldId": 3,
+      "name": "Искра Фокуса",
+      "desc": "Искра появилась после того, как ты выбрал, что помогает тебе собраться и довести работу до конца. Внимание не приходит само — его можно тренировать, защищать и возвращать, когда оно теряется. Криосфера это знает.",
+      "imageUrl": "assets/v1_53.png", "x": 1120, "y": 71,  "width": 57, "height": 57
+    },
+    {
+      "id": "chal-4", "worldId": 4,
+      "name": "Осколок Смелой Ошибки",
+      "desc": "Этот осколок появился рядом с Бездной после того, как ты разобрал ошибку и нашёл в ней следующий шаг. Это не тёмный камень провала — это часть будущего решения. Ошибка становится опасной только тогда, когда из неё ничего не извлекают.",
+      "imageUrl": "assets/v1_54.png", "x": 683,  "y": 570, "width": 57, "height": 57
+    },
+    {
+      "id": "chal-5", "worldId": 5,
+      "name": "Сосуд Обратной Связи",
+      "desc": "Сосуд появился возле Леса Элементов, когда ты получил или дал полезную обратную связь. Внутри начала светиться энергия роста. Хороший feedback не ломает идею — он помогает ей стать сильнее.",
+      "imageUrl": "assets/v1_56.png", "x": 1081, "y": 422, "width": 58, "height": 58
+    },
+    {
+      "id": "chal-6", "worldId": 6,
+      "name": "Линза Видения",
+      "desc": "Линза появилась, когда ты сравнил варианты решения и объяснил, почему выбрал один из них. Через неё карта показывает скрытые связи между мирами. Создатель не просто делает — он понимает, почему делает именно так.",
+      "imageUrl": "assets/v1_57.png", "x": 786,  "y": 81,  "width": 57, "height": 57
+    },
+    {
+      "id": "chal-7", "worldId": 7,
+      "name": "Свиток Наблюдений",
+      "desc": "Свиток появился после того, как ты честно описал: что получилось, что было сложно и что можно улучшить. На нём нет оценок — только следы опыта. Наблюдать за своим процессом так же важно, как получить готовый результат.",
+      "imageUrl": "assets/v1_51.png", "x": 77,   "y": 374, "width": 57, "height": 57
+    }
+  ],
+
+  "activationTexts": {
+    "world":     ["Core Fragment accepted.", "World connection restored.", "Ancient pathways are opening.", "The Universe remembers your name."],
+    "project":   ["Restoration sequence complete.", "Creation mechanism synchronized.", "The system responds to your work.", "Balance is returning."],
+    "challenge": ["Hidden resonance detected.", "Inner artifact awakened.", "Growth leaves a visible trace.", "The map recognizes your progress."]
+  },
+
+  "colors": {
+    "worldLocked":      { "fill": "#1a1f3a", "stroke": "#2d3562", "text": "#4a5280" },
+    "worldUnlocked":    { "stroke": "#ffffff", "text": "#ffffff" },
+    "projectElement":   { "fill": "#10b981", "stroke": "#34d399" },
+    "challengeElement": { "fill": "#f59e0b", "stroke": "#fcd34d" },
+    "connectorLocked":  "#1e2654",
+    "connectorUnlocked":"#6366f1"
+  },
+
+  "texts": {
+    "headerTitle":       "Карта приключений",
+    "courseName":        "Разлом Созидания · Kodland Universe",
+    "statsCurrentWeek":  "Неделя",
+    "statsWorlds":       "Миры",
+    "statsElements":     "Элементов",
+    "statsProgress":     "Прогресс",
+    "inputPlaceholder":  "STAR-TECH-OPEN",
+    "buttonApply":       "Restore Connection",
+    "codeHistoryTitle":  "Последние коды",
+    "messages": {
+      "successWorldUnlock":   "World unlocked: {worldName}",
+      "successElementUnlock": "Restored: {elementName}",
+      "errorCodeFormat":      "Invalid fragment code",
+      "errorCodeUsed":        "Fragment already activated",
+      "errorCodeNotFound":    "Fragment not recognized",
+      "errorCodeExpired":     "Fragment has expired",
+      "errorConnection":      "No connection — verified locally",
+      "worldLocked":          "This world is still locked",
+      "projectLocked":        "Object not yet restored",
+      "challengeLocked":      "Artifact not yet found"
+    }
+  },
+
+  "codeValidation": {
+    "pattern":          "^[A-Z]{2,8}-[A-Z]{2,8}-[A-Z]{2,8}$",
+    "validateOnServer": false,
+    "serverEndpoint":   "/api/code/validate",
+    "fallbackToLocal":  true,
+    "maxAttempts":      10,
+    "cooldownMs":       1000
+  },
+
+  "demoCodes": [
+    { "code": "STAR-TECH-OPEN",    "worldId": 1, "type": "world",   "elementType": null,        "elementName": "Технополис" },
+    { "code": "FORGE-CODEX-SYNC",  "worldId": 1, "type": "element", "elementType": "project",   "elementName": "Кодекс Создателей" },
+    { "code": "ECHO-PATH-AWAKE",   "worldId": 1, "type": "element", "elementType": "challenge", "elementName": "Компас Намерения" },
+    { "code": "STAR-IGNIS-OPEN",   "worldId": 2, "type": "world",   "elementType": null,        "elementName": "Огненные Земли" },
+    { "code": "ECHO-COURAGE-AWAKE","worldId": 2, "type": "element", "elementType": "challenge", "elementName": "Факел Действия" },
+    { "code": "STAR-CRYO-OPEN",    "worldId": 3, "type": "world",   "elementType": null,        "elementName": "Криосфера" },
+    { "code": "FORGE-AEGIS-SYNC",  "worldId": 3, "type": "element", "elementType": "project",   "elementName": "Щит Равновесия" },
+    { "code": "ECHO-FOCUS-AWAKE",  "worldId": 3, "type": "element", "elementType": "challenge", "elementName": "Искра Фокуса" },
+    { "code": "STAR-VOID-OPEN",    "worldId": 4, "type": "world",   "elementType": null,        "elementName": "Бездна" },
+    { "code": "FORGE-CHRONO-SYNC", "worldId": 4, "type": "element", "elementType": "project",   "elementName": "Хроносфера" },
+    { "code": "ECHO-REFLECT-AWAKE","worldId": 4, "type": "element", "elementType": "challenge", "elementName": "Осколок Смелой Ошибки" },
+    { "code": "STAR-SYLVA-OPEN",   "worldId": 5, "type": "world",   "elementType": null,        "elementName": "Лес Элементов" },
+    { "code": "FORGE-ROOT-SYNC",   "worldId": 5, "type": "element", "elementType": "project",   "elementName": "Древо Жизни" },
+    { "code": "ECHO-VOICE-AWAKE",  "worldId": 5, "type": "element", "elementType": "challenge", "elementName": "Сосуд Обратной Связи" },
+    { "code": "STAR-ASTRA-OPEN",   "worldId": 6, "type": "world",   "elementType": null,        "elementName": "Небесный Пик" },
+    { "code": "FORGE-CRYSTAL-SYNC","worldId": 6, "type": "element", "elementType": "project",   "elementName": "Энергокристалл" },
+    { "code": "ECHO-VISION-AWAKE", "worldId": 6, "type": "element", "elementType": "challenge", "elementName": "Линза Видения" },
+    { "code": "STAR-RUIN-OPEN",    "worldId": 7, "type": "world",   "elementType": null,        "elementName": "Затерянные Руины" },
+    { "code": "ECHO-SCROLL-AWAKE", "worldId": 7, "type": "element", "elementType": "challenge", "elementName": "Свиток Наблюдений" }
+  ]
+}
