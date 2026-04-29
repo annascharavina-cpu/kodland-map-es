@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kodland Universe — Карта приключений</title>
-  <link rel="stylesheet" href="css/styles.css?v=2" />
-  <link rel="stylesheet" href="css/animations.css?v=2" />
+  <title>Kodland Universe — Mapa de aventuras</title>
+  <link rel="stylesheet" href="css/styles.css?v=3" />
+  <link rel="stylesheet" href="css/animations.css?v=3" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -15,7 +15,7 @@
 
     <!-- ── View-only banner ── -->
     <div id="view-banner" class="view-banner hidden">
-      <span id="view-banner-text">👁 Режим просмотра</span>
+      <span id="view-banner-text">👁 Modo visualización</span>
     </div>
 
     <!-- ── Header ── -->
@@ -23,13 +23,13 @@
 
       <!-- Profile -->
       <div class="profile-section">
-        <button class="avatar-btn" id="avatar-btn" title="Изменить аватар">
+        <button class="avatar-btn" id="avatar-btn" title="Cambiar avatar">
           <span id="avatar-display">🧑‍💻</span>
         </button>
         <div class="profile-info">
           <div class="profile-name-wrap">
-            <span class="profile-name" id="profile-name">Восстановитель</span>
-            <button class="profile-edit-btn" id="profile-edit-btn" title="Изменить имя">✏️</button>
+            <span class="profile-name" id="profile-name">Restaurador</span>
+            <button class="profile-edit-btn" id="profile-edit-btn" title="Cambiar nombre">✏️</button>
           </div>
           <div class="header-course" id="header-course">Kodland Universe</div>
         </div>
@@ -39,19 +39,19 @@
 
       <!-- Stats -->
       <div class="stat-item">
-        <span class="stat-label" id="stat-worlds-label">Миры</span>
+        <span class="stat-label" id="stat-worlds-label">Mundos</span>
         <span class="stat-value" id="stat-worlds">—</span>
       </div>
       <div class="stat-item">
-        <span class="stat-label" id="stat-proj-label">Проекты</span>
+        <span class="stat-label" id="stat-proj-label">Proyectos</span>
         <span class="stat-value" id="stat-proj">—</span>
       </div>
       <div class="stat-item">
-        <span class="stat-label" id="stat-chal-label">Челленджи</span>
+        <span class="stat-label" id="stat-chal-label">Desafíos</span>
         <span class="stat-value" id="stat-chal">—</span>
       </div>
       <div class="stat-item stat-progress">
-        <span class="stat-label" id="stat-prog-label">Прогресс</span>
+        <span class="stat-label" id="stat-prog-label">Progreso</span>
         <div class="progress-track">
           <div class="progress-fill" id="stat-progress-fill"></div>
         </div>
@@ -59,8 +59,8 @@
       </div>
 
       <!-- Share -->
-      <button class="share-btn" id="share-btn" title="Поделиться прогрессом">
-        🔗 Share
+      <button class="share-btn" id="share-btn" title="Compartir progreso">
+        🔗 Compartir
       </button>
     </header>
 
@@ -84,9 +84,9 @@
 
     <!-- ── Challenge Bar ── -->
     <div class="challenge-bar">
-      <span class="challenge-bar-label">Артефакты</span>
+      <span class="challenge-bar-label">Artefactos</span>
       <div class="challenge-bar-items" id="challenge-bar-items"></div>
-      <div class="challenge-bar-empty" id="challenge-bar-empty">Артефакты появятся по мере прохождения</div>
+      <div class="challenge-bar-empty" id="challenge-bar-empty">Los artefactos aparecerán a medida que avances</div>
     </div>
 
     <!-- ── Code Panel ── -->
@@ -94,7 +94,7 @@
 
       <!-- Input -->
       <div class="code-input-group">
-        <div class="code-input-label">Enter Fragment Code</div>
+        <div class="code-input-label">Ingresa el Código de Fragmento</div>
         <div class="code-input-row">
           <input
             type="text"
@@ -106,7 +106,7 @@
             autocorrect="off"
             spellcheck="false"
           />
-          <button id="code-btn" class="code-btn">Restore Connection</button>
+          <button id="code-btn" class="code-btn">Restaurar Conexión</button>
         </div>
         <div class="code-message" id="code-message"></div>
         <div class="server-warn" id="server-warn"></div>
@@ -114,10 +114,10 @@
 
       <!-- Actions -->
       <div class="panel-actions">
-        <button class="panel-action-btn" id="projects-btn">📎 Projects</button>
+        <button class="panel-action-btn" id="projects-btn">📎 Proyectos</button>
         <div class="legend">
-          <div class="legend-item"><span class="legend-dot legend-dot--project"></span>Project</div>
-          <div class="legend-item"><span class="legend-dot legend-dot--challenge"></span>Artifact</div>
+          <div class="legend-item"><span class="legend-dot legend-dot--project"></span>Proyecto</div>
+          <div class="legend-item"><span class="legend-dot legend-dot--challenge"></span>Artefacto</div>
         </div>
       </div>
 
@@ -136,12 +136,12 @@
   <!-- ── Name modal ── -->
   <div id="name-modal" class="name-modal hidden">
     <div class="name-modal-inner">
-      <div class="name-modal-title">Имя Восстановителя</div>
+      <div class="name-modal-title">Nombre del Restaurador</div>
       <input id="name-input" class="name-input" type="text"
-        placeholder="Введи своё имя" maxlength="32" />
+        placeholder="Escribe tu nombre" maxlength="32" />
       <div class="name-modal-actions">
-        <button id="name-save-btn"   class="code-btn">Сохранить</button>
-        <button id="name-cancel-btn" class="name-cancel-btn">Отмена</button>
+        <button id="name-save-btn"   class="code-btn">Guardar</button>
+        <button id="name-cancel-btn" class="name-cancel-btn">Cancelar</button>
       </div>
     </div>
   </div>
@@ -149,19 +149,19 @@
   <!-- ── Projects panel ── -->
   <div id="projects-panel" class="projects-panel hidden">
     <div class="projects-panel-header">
-      <span>📎 Мои проекты</span>
+      <span>📎 Mis proyectos</span>
       <button id="projects-close" class="panel-close-btn">✕</button>
     </div>
     <div id="projects-list" class="projects-list">
-      <div class="projects-empty">Восстанови проекты на карте, чтобы добавить ссылки</div>
+      <div class="projects-empty">Restaura proyectos en el mapa para agregar enlaces</div>
     </div>
   </div>
 
   <!-- ── Share toast ── -->
-  <div id="share-toast" class="share-toast hidden">🔗 Ссылка скопирована!</div>
+  <div id="share-toast" class="share-toast hidden">🔗 ¡Enlace copiado!</div>
 
   <!-- ── Reactions toast ── -->
-  <div id="reactions-toast" class="share-toast reactions-toast hidden">🎉 Реакции получены!</div>
+  <div id="reactions-toast" class="share-toast reactions-toast hidden">🎉 ¡Reacciones recibidas!</div>
 
   <!-- ── Modal overlay ── -->
   <div id="modal-overlay" class="modal-overlay hidden"></div>
@@ -169,9 +169,9 @@
   <!-- ── Unlock modal ── -->
   <div id="unlock-modal" class="unlock-modal hidden">
     <div class="unlock-icon"       id="unlock-icon">✨</div>
-    <div class="unlock-title"      id="unlock-title">Восстановлено!</div>
+    <div class="unlock-title"      id="unlock-title">¡Restaurado!</div>
     <div class="unlock-activation" id="unlock-activation"></div>
-    <button id="unlock-close" class="unlock-close-btn">Continue →</button>
+    <button id="unlock-close" class="unlock-close-btn">Continuar →</button>
   </div>
 
   <!-- Map tooltip -->

@@ -18,7 +18,7 @@ export function getURLParams() {
 export function formatDate(isoString) {
   if (!isoString) return '';
   const d = new Date(isoString);
-  return d.toLocaleDateString('ru-RU', {
+  return d.toLocaleDateString('es-ES', {
     day: '2-digit', month: '2-digit',
     hour: '2-digit', minute: '2-digit'
   });

@@ -62,7 +62,7 @@ export const configLoader = {
       courseId: 'default', courseName: 'Kodland Universe', version: '1.0',
       mapConfig: { width: 1280, height: 640, backgroundColor: '#0a0e1a' },
       worlds: Array.from({ length: 8 }, (_, i) => ({
-        id: i + 1, name: `Мир ${i + 1}`,
+        id: i + 1, name: `Mundo ${i + 1}`,
         x: 140 + i * 150, y: i % 2 === 0 ? 420 : 240,
         color: '#6366f1', colorDark: '#312e81'
       })),
@@ -77,18 +77,18 @@ export const configLoader = {
         connectorLocked: '#1e2654', connectorUnlocked: '#6366f1'
       },
       texts: {
-        headerTitle: 'Карта приключений', courseName: 'Kodland Universe',
-        statsCurrentWeek: 'Неделя', statsWorlds: 'Миры',
-        statsElements: 'Элементов', statsProgress: 'Прогресс',
-        inputPlaceholder: 'Введи код разблокировки…', buttonApply: 'Применить',
+        headerTitle: 'Mapa de aventuras', courseName: 'Kodland Universe',
+        statsCurrentWeek: 'Semana', statsWorlds: 'Mundos',
+        statsElements: 'Elementos', statsProgress: 'Progreso',
+        inputPlaceholder: 'Ingresa el código…', buttonApply: 'Aplicar',
         messages: {
-          successWorldUnlock: 'Новый мир открыт: {worldName}!',
-          successElementUnlock: 'Разблокировано: {elementName}!',
-          errorCodeFormat: 'Неверный формат кода',
-          errorCodeUsed: 'Этот код уже использован',
-          errorCodeNotFound: 'Код не найден',
-          errorCodeExpired: 'Срок действия кода истёк',
-          errorConnection: 'Нет соединения, код проверен локально'
+          successWorldUnlock: '¡Nuevo mundo abierto: {worldName}!',
+          successElementUnlock: '¡Desbloqueado: {elementName}!',
+          errorCodeFormat: 'Formato de código inválido',
+          errorCodeUsed: 'Este código ya fue utilizado',
+          errorCodeNotFound: 'Código no encontrado',
+          errorCodeExpired: 'El código ha expirado',
+          errorConnection: 'Sin conexión, código verificado localmente'
         }
       },
       codeValidation: { pattern: '^[A-Z]+-W[1-8]-[A-Z0-9]{4}$', validateOnServer: false, fallbackToLocal: true },

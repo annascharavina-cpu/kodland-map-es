@@ -70,7 +70,7 @@ export const renderer = {
     const ttitle = this._tt.querySelector('#tt-title');
     const tdesc  = this._tt.querySelector('#tt-desc');
 
-    const labels = { world: '🌍 Мир', locked: '🔒 Мир', project: '🛠 Проект', challenge: '⭐ Челлендж' };
+    const labels = { world: '🌍 Mundo', locked: '🔒 Mundo', project: '🛠 Proyecto', challenge: '⭐ Desafío' };
     badge.textContent = labels[type] || type;
     badge.className   = `tt-badge tt-badge--${type}`;
     ttitle.textContent = title;
@@ -127,7 +127,7 @@ export const renderer = {
     if (!container) return;
     if (!recentCodes.length) { container.innerHTML = ''; return; }
     container.innerHTML = recentCodes.map(c => {
-      const t = new Date(c.redeemedAt).toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+      const t = new Date(c.redeemedAt).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
       return `<div class="history-item">
         <span class="history-code">${c.code}</span>
         <span class="history-time">${t}</span>
@@ -257,7 +257,7 @@ export const renderer = {
   _buildProjects() {
     const layer = this._svg.querySelector('#project-layer');
     for (const proj of (this._config.projects || [])) {
-      const worldName = this._config.worlds.find(w => w.id === proj.worldId)?.name || `Мир ${proj.worldId}`;
+      const worldName = this._config.worlds.find(w => w.id === proj.worldId)?.name || `Mundo ${proj.worldId}`;
       const g = el('g', { id: `project-${proj.worldId}`, class: 'project-group' });
 
       const broken = this._img({
@@ -269,8 +269,8 @@ export const renderer = {
       if (broken) {
         this._attachTooltip(broken, () => ({
           type:  'project',
-          title: `${proj.name || 'Проект'} · ${worldName}`,
-          desc:  (proj.desc || '') + ' Ещё не исправлен.'
+          title: `${proj.name || 'Proyecto'} · ${worldName}`,
+          desc:  (proj.desc || '') + ' Aún no restaurado.'
         }));
         g.appendChild(broken);
       }
@@ -284,8 +284,8 @@ export const renderer = {
       if (fixed) {
         this._attachTooltip(fixed, () => ({
           type:  'project',
-          title: `${proj.name || 'Проект'} · ${worldName}`,
-          desc:  (proj.desc || '') + ' Починен!'
+          title: `${proj.name || 'Proyecto'} · ${worldName}`,
+          desc:  (proj.desc || '') + ' ¡Restaurado!'
         }));
         g.appendChild(fixed);
       }
@@ -305,7 +305,7 @@ export const renderer = {
       if (!e) continue;
       this._attachTooltip(e, () => ({
         type: 'challenge',
-        title: chal.name || `Челлендж · Мир ${chal.worldId}`,
+        title: chal.name || `Desafío · Mundo ${chal.worldId}`,
         desc:  chal.desc || ''
       }));
       layer.appendChild(e);
@@ -352,9 +352,9 @@ export const renderer = {
         const locked = g.classList.contains('locked');
         return {
           type:  locked ? 'locked' : 'world',
-          title: `Мир ${w.id}: ${w.name}`,
+          title: `Mundo ${w.id}: ${w.name}`,
           desc:  locked
-            ? (w.lockedDesc || 'Введи код разблокировки, чтобы открыть этот мир.')
+            ? (w.lockedDesc || 'Ingresa el código de desbloqueo para abrir este mundo.')
             : (w.desc || '')
         };
       });

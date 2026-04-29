@@ -193,8 +193,8 @@ async function initViewMode(viewParam, configId) {
     const banner    = document.getElementById('view-banner');
     const bannerTxt = document.getElementById('view-banner-text');
     if (banner) {
-      const name = shareState.studentName || 'Восстановитель';
-      bannerTxt.textContent = `👁  Прогресс — ${name} · только просмотр`;
+      const name = shareState.studentName || 'Restaurador';
+      bannerTxt.textContent = `👁  Progreso — ${name} · solo visualización`;
       banner.classList.remove('hidden');
     }
 
@@ -249,7 +249,7 @@ function updateProfileUI() {
   const avatarEl = document.getElementById('avatar-display');
   const nameEl   = document.getElementById('profile-name');
   if (avatarEl) avatarEl.textContent = s.avatarEmoji || '🧑‍💻';
-  if (nameEl)   nameEl.textContent   = s.studentName  || 'Восстановитель';
+  if (nameEl)   nameEl.textContent   = s.studentName  || 'Restaurador';
 }
 
 function wireProfile(studentId) {
@@ -370,7 +370,7 @@ async function renderProjectsPanel() {
   });
 
   if (!fixed.length) {
-    list.innerHTML = '<div class="projects-empty">Восстанови проекты на карте, чтобы добавить ссылки</div>';
+    list.innerHTML = '<div class="projects-empty">Restaura proyectos en el mapa para agregar enlaces</div>';
     return;
   }
 
@@ -380,7 +380,7 @@ async function renderProjectsPanel() {
     : {};
 
   list.innerHTML = fixed.map(p => {
-    const world  = config.worlds.find(w => w.id === p.worldId)?.name || `Мир ${p.worldId}`;
+    const world  = config.worlds.find(w => w.id === p.worldId)?.name || `Mundo ${p.worldId}`;
     const link   = appState.projectLinks?.[p.id] || '';
     const pr     = reactions[p.id] || {};
     const badges = Object.entries(pr)
@@ -500,10 +500,10 @@ function updateChallengeBar() {
 function applyConfigTexts(cfg) {
   const t = cfg.texts || {};
   setEl('header-course',     t.courseName      || cfg.courseName || 'Kodland Universe');
-  setEl('stat-worlds-label', t.statsWorlds     || 'Миры');
-  setEl('stat-proj-label',   t.statsProjects   || 'Проекты');
-  setEl('stat-chal-label',   t.statsChallenges || 'Челленджи');
-  setEl('stat-prog-label',   t.statsProgress   || 'Прогресс');
+  setEl('stat-worlds-label', t.statsWorlds     || 'Mundos');
+  setEl('stat-proj-label',   t.statsProjects   || 'Proyectos');
+  setEl('stat-chal-label',   t.statsChallenges || 'Desafíos');
+  setEl('stat-prog-label',   t.statsProgress   || 'Progreso');
   const inp = document.getElementById('code-input');
   if (inp) inp.placeholder = t.inputPlaceholder || 'STAR-TECH-OPEN';
 }
@@ -536,16 +536,16 @@ async function handleCode(studentId) {
     code, state.get().studentId, state.get().courseId, state.get().unlockedCodes
   );
 
-  if (btn) { btn.disabled = false; btn.textContent = 'Restore Connection'; }
+  if (btn) { btn.disabled = false; btn.textContent = 'Restaurar Conexión'; }
 
   const msgs = config.texts?.messages || {};
   if (!result.valid) {
     const errMap = {
-      INVALID_FORMAT:    msgs.errorCodeFormat   || 'Invalid fragment code',
-      CODE_ALREADY_USED: msgs.errorCodeUsed     || 'Fragment already activated',
-      CODE_NOT_FOUND:    msgs.errorCodeNotFound  || 'Fragment not recognized',
-      CODE_EXPIRED:      msgs.errorCodeExpired   || 'Fragment has expired',
-      CONNECTION_ERROR:  msgs.errorConnection    || 'No connection — verified locally'
+      INVALID_FORMAT:    msgs.errorCodeFormat   || 'Código de fragmento inválido',
+      CODE_ALREADY_USED: msgs.errorCodeUsed     || 'Fragmento ya activado',
+      CODE_NOT_FOUND:    msgs.errorCodeNotFound  || 'Fragmento no reconocido',
+      CODE_EXPIRED:      msgs.errorCodeExpired   || 'El fragmento ha expirado',
+      CONNECTION_ERROR:  msgs.errorConnection    || 'Sin conexión — verificado localmente'
     };
     showMessage(errMap[result.error] || result.error, 'error');
     return;
@@ -553,19 +553,19 @@ async function handleCode(studentId) {
 
   const normalized = code.trim().toUpperCase();
   let successMsg   = '';
-  const worldName  = config.worlds.find(w => w.id === result.worldId)?.name || `World ${result.worldId}`;
+  const worldName  = config.worlds.find(w => w.id === result.worldId)?.name || `Mundo ${result.worldId}`;
 
   if (result.type === 'world') {
-    if (!state.unlockWorld(result.worldId)) { showMessage('Already unlocked', 'warn'); return; }
+    if (!state.unlockWorld(result.worldId)) { showMessage('Ya desbloqueado', 'warn'); return; }
     state.setWorldCode(result.worldId, normalized);
-    successMsg = interpolateText(msgs.successWorldUnlock || 'World unlocked: {worldName}', { worldName });
+    successMsg = interpolateText(msgs.successWorldUnlock || 'Mundo desbloqueado: {worldName}', { worldName });
     state.setWeek(Math.max(state.get().currentWeek, result.worldId));
 
   } else if (result.type === 'element') {
     const ws = state.get().worldsState.find(w => w.worldId === result.worldId);
-    if (!ws?.unlocked) { showMessage(`Unlock world «${worldName}» first`, 'error'); return; }
+    if (!ws?.unlocked) { showMessage(`Desbloquea primero el mundo «${worldName}»`, 'error'); return; }
     if (!state.unlockElement(result.worldId, result.elementType)) {
-      showMessage('Already activated', 'warn'); return;
+      showMessage('Ya activado', 'warn'); return;
     }
     state.setElementCode(result.worldId, result.elementType, normalized);
     successMsg = interpolateText(msgs.successElementUnlock || 'Restored: {elementName}',
@@ -592,7 +592,7 @@ async function handleCode(studentId) {
   if (!result.fromServer) {
     const warn = document.getElementById('server-warn');
     if (warn) {
-      warn.textContent = '⚠ Verified locally';
+      warn.textContent = '⚠ Verificado localmente';
       warn.style.display = 'block';
       setTimeout(() => { warn.style.display = 'none'; }, 4000);
     }
