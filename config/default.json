@@ -88,6 +88,13 @@
       "fixed":  { "url": "assets/v1_31.png", "x": 53,   "y": 69,  "width": 153, "height": 153 }
     },
     {
+      "id": "proj-2", "worldId": 2,
+      "name": "Forja de los Elementos",
+      "desc": "La Forja de los Elementos transformaba ideas en creaciones reales. Sus llamas fundían conceptos vagos y los convertían en proyectos concretos. El fuego se apagó cuando los Creadores dejaron de construir — ahora sus cámaras están frías y sus herramientas, oxidadas. Restaurarla significa demostrar que eres capaz de crear bajo presión.",
+      "broken": { "url": "assets/v1_40.png", "x": 8,   "y": 262, "width": 92,  "height": 108 },
+      "fixed":  { "url": "assets/v1_41.png", "x": 0,   "y": 248, "width": 116, "height": 132 }
+    },
+    {
       "id": "proj-3", "worldId": 3,
       "name": "Escudo del Equilibrio",
       "desc": "Un antiguo mecanismo protector entre la Criosfera y las Tierras de Fuego. Mantenía el equilibrio entre el impulso de la acción y la precisión de la ejecución. El cristal interior casi se apagó — y la energía de los mundos se volvió demasiado brusca o demasiado inmóvil.",
@@ -217,6 +224,7 @@
     { "code": "FORGE-CODEX-SYNC",  "worldId": 1, "type": "element", "elementType": "project",   "elementName": "Códice de los Creadores" },
     { "code": "ECHO-PATH-AWAKE",   "worldId": 1, "type": "element", "elementType": "challenge", "elementName": "Brújula de la Intención" },
     { "code": "STAR-IGNIS-OPEN",   "worldId": 2, "type": "world",   "elementType": null,        "elementName": "Tierras de Fuego" },
+    { "code": "FORGE-ANVIL-SYNC",  "worldId": 2, "type": "element", "elementType": "project",   "elementName": "Forja de los Elementos" },
     { "code": "ECHO-COURAGE-AWAKE","worldId": 2, "type": "element", "elementType": "challenge", "elementName": "Antorcha de la Acción" },
     { "code": "STAR-CRYO-OPEN",    "worldId": 3, "type": "world",   "elementType": null,        "elementName": "Criosfera" },
     { "code": "FORGE-AEGIS-SYNC",  "worldId": 3, "type": "element", "elementType": "project",   "elementName": "Escudo del Equilibrio" },
