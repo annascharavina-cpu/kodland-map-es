@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kodland Universe — Mapa de aventuras</title>
-  <link rel="stylesheet" href="css/styles.css?v=3" />
-  <link rel="stylesheet" href="css/animations.css?v=3" />
+  <link rel="stylesheet" href="css/styles.css?v=4" />
+  <link rel="stylesheet" href="css/animations.css?v=4" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -114,6 +114,7 @@
 
       <!-- Actions -->
       <div class="panel-actions">
+        <button class="panel-action-btn" id="skills-btn">🌟 Habilidades</button>
         <button class="panel-action-btn" id="projects-btn">📎 Proyectos</button>
         <div class="legend">
           <div class="legend-item"><span class="legend-dot legend-dot--project"></span>Proyecto</div>
@@ -181,6 +182,54 @@
     <div class="tt-desc"  id="tt-desc"></div>
   </div>
 
-  <script type="module" src="js/app.js?v=3"></script>
+  <!-- ── Skill Map Modal ── -->
+  <div id="skill-map-modal" class="skm-modal hidden">
+    <div class="skm-backdrop"></div>
+    <div class="skm-container">
+
+      <div class="skm-header">
+        <div class="skm-header-left">
+          <div class="skm-new-badge" id="skm-new-badge">✨ NUEVA HABILIDAD</div>
+          <h2 class="skm-title">Árbol de Habilidades</h2>
+        </div>
+        <div class="skm-header-right">
+          <div class="skm-ring-wrap">
+            <svg class="skm-ring-svg" viewBox="0 0 56 56">
+              <defs>
+                <linearGradient id="skm-ring-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#6366f1"/>
+                  <stop offset="100%" stop-color="#a855f7"/>
+                </linearGradient>
+              </defs>
+              <circle class="skm-ring-bg"   cx="28" cy="28" r="22"/>
+              <circle class="skm-ring-fill" id="skm-ring-fill" cx="28" cy="28" r="22"/>
+            </svg>
+            <span class="skm-ring-pct" id="skm-ring-pct">0%</span>
+          </div>
+          <button class="skm-close-btn" id="skm-close-btn" title="Cerrar">✕</button>
+        </div>
+      </div>
+
+      <div class="skm-body">
+        <svg id="skill-tree-svg" class="skill-tree-svg"
+             viewBox="0 0 800 370" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+
+      <div class="skm-footer">
+        <div class="skm-detail-card" id="skm-detail-card">
+          <div class="skm-detail-icon" id="skm-detail-icon">✨</div>
+          <div class="skm-detail-text">
+            <div class="skm-detail-type" id="skm-detail-type">HABILIDAD</div>
+            <div class="skm-detail-name" id="skm-detail-name">—</div>
+            <div class="skm-detail-desc" id="skm-detail-desc"></div>
+          </div>
+        </div>
+        <button class="skm-continue-btn" id="skm-continue-btn">Continuar →</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js?v=4"></script>
 </body>
 </html>

@@ -1149,3 +1149,280 @@ html, body {
 .profile-name { max-width: 90px; }
   .header-course { display: none; }
 }
+
+/* ========================
+   Skill Map Modal
+   ======================== */
+.skm-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 210;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.skm-modal.hidden { display: none; }
+
+.skm-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 2, 18, 0.90);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.skm-container {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(160deg, #080d2a 0%, #040716 55%, #08041e 100%);
+  border: 1px solid rgba(99, 102, 241, 0.28);
+  border-radius: 20px;
+  width: min(900px, 96vw);
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(99,102,241,0.08),
+    0 0 80px rgba(99,102,241,0.12),
+    0 40px 100px rgba(0,0,0,0.85);
+}
+
+/* ── Header ── */
+.skm-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px 14px;
+  border-bottom: 1px solid rgba(99,102,241,0.14);
+  flex-shrink: 0;
+  gap: 16px;
+}
+
+.skm-header-left { min-width: 0; }
+
+.skm-new-badge {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #a855f7;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.skm-title {
+  font-size: 19px;
+  font-weight: 800;
+  color: #e2e8f8;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.skm-header-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+/* Progress ring */
+.skm-ring-wrap {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skm-ring-svg {
+  width: 52px;
+  height: 52px;
+  transform: rotate(-90deg);
+  position: absolute;
+  inset: 0;
+}
+
+.skm-ring-bg {
+  fill: none;
+  stroke: rgba(99,102,241,0.14);
+  stroke-width: 4;
+}
+
+.skm-ring-fill {
+  fill: none;
+  stroke: url(#skm-ring-grad);
+  stroke-width: 4;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s cubic-bezier(0.4,0,0.2,1);
+}
+
+.skm-ring-pct {
+  position: relative;
+  font-size: 11px;
+  font-weight: 700;
+  color: #a5b4fc;
+  z-index: 1;
+}
+
+.skm-close-btn {
+  width: 30px;
+  height: 30px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  color: #8892bf;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  font-family: var(--font);
+  padding: 0;
+}
+.skm-close-btn:hover {
+  background: rgba(255,255,255,0.09);
+  color: #e2e8f8;
+  border-color: rgba(255,255,255,0.18);
+}
+
+/* ── Body / SVG canvas ── */
+.skm-body {
+  flex: 1;
+  overflow: hidden;
+  padding: 4px 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+}
+
+.skill-tree-svg {
+  width: 100%;
+  height: 100%;
+  max-height: 330px;
+  display: block;
+  overflow: visible;
+}
+
+/* ── SVG node styles ── */
+.skm-node { cursor: default; }
+.skm-node.unlocked { cursor: pointer; }
+.skm-node--selected circle:first-of-type {
+  filter: brightness(1.35);
+  stroke-width: 2.5 !important;
+  stroke-opacity: 1 !important;
+}
+
+/* is-new starts invisible; animation reveals it */
+.skm-node.is-new {
+  opacity: 0;
+}
+
+.skm-node.unlocked .skm-node-glow {
+  animation: skmGlowPulse 3.5s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.skm-node.unlocked:not(.is-new) .skm-node-emoji {
+  animation: skmEmojiFloat 4s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* Project/challenge achievement badges */
+.skm-badge-proj,
+.skm-badge-chal {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* ── Footer ── */
+.skm-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px 18px;
+  border-top: 1px solid rgba(99,102,241,0.14);
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.skm-detail-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 0;
+}
+
+.skm-detail-icon {
+  font-size: 34px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.skm-detail-text { min-width: 0; flex: 1; }
+
+.skm-detail-type {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #6366f1;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.skm-detail-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #e2e8f8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 3px;
+}
+
+.skm-detail-desc {
+  font-size: 11px;
+  color: #8892bf;
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.skm-continue-btn {
+  flex-shrink: 0;
+  padding: 11px 28px;
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: var(--font);
+  letter-spacing: 0.03em;
+  transition: opacity 0.2s, transform 0.12s, box-shadow 0.2s;
+  box-shadow: 0 0 24px rgba(99,102,241,0.28);
+  white-space: nowrap;
+}
+.skm-continue-btn:hover {
+  opacity: 0.88;
+  box-shadow: 0 0 36px rgba(99,102,241,0.48);
+}
+.skm-continue-btn:active { transform: scale(0.97); }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .skm-header { padding: 14px 16px 12px; }
+  .skm-footer { padding: 12px 16px 16px; flex-direction: column; align-items: stretch; }
+  .skm-continue-btn { text-align: center; }
+  .skm-detail-desc { display: none; }
+  .skm-title { font-size: 16px; }
+}
