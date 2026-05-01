@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kodland Universe — Mapa de aventuras</title>
+  <title>Universo Kodland — Mapa de aventuras</title>
   <link rel="stylesheet" href="css/styles.css?v=4" />
   <link rel="stylesheet" href="css/animations.css?v=4" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,7 +31,7 @@
             <span class="profile-name" id="profile-name">Restaurador</span>
             <button class="profile-edit-btn" id="profile-edit-btn" title="Cambiar nombre">✏️</button>
           </div>
-          <div class="header-course" id="header-course">Kodland Universe</div>
+          <div class="header-course" id="header-course">Universo Kodland</div>
         </div>
       </div>
 
@@ -87,6 +87,11 @@
       <span class="challenge-bar-label">Artefactos</span>
       <div class="challenge-bar-items" id="challenge-bar-items"></div>
       <div class="challenge-bar-empty" id="challenge-bar-empty">Los artefactos aparecerán a medida que avances</div>
+    </div>
+
+    <!-- ── View-mode skills button ── -->
+    <div id="view-skills-bar" class="view-skills-bar hidden">
+      <button class="panel-action-btn" id="view-skills-btn">🌟 Ver Habilidades</button>
     </div>
 
     <!-- ── Code Panel ── -->
@@ -218,15 +223,15 @@
           <div class="skm-cat-bar">
             <span class="skm-cat-icon" style="color:#06b6d4">💻</span>
             <div class="skm-cat-track-wrap">
-              <div class="skm-cat-label">Técnico</div>
+              <div class="skm-cat-label">Hard</div>
               <div class="skm-cat-track"><div class="skm-cat-fill skm-cat-fill--hard" id="skm-fill-hard"></div></div>
             </div>
-            <span class="skm-cat-count" id="skm-count-hard">0/7</span>
+            <span class="skm-cat-count" id="skm-count-hard">0/14</span>
           </div>
           <div class="skm-cat-bar">
             <span class="skm-cat-icon" style="color:#8b5cf6">🗣️</span>
             <div class="skm-cat-track-wrap">
-              <div class="skm-cat-label">Comunicación</div>
+              <div class="skm-cat-label">Soft</div>
               <div class="skm-cat-track"><div class="skm-cat-fill skm-cat-fill--soft" id="skm-fill-soft"></div></div>
             </div>
             <span class="skm-cat-count" id="skm-count-soft">0/7</span>
@@ -234,26 +239,32 @@
           <div class="skm-cat-bar">
             <span class="skm-cat-icon" style="color:#f59e0b">🌱</span>
             <div class="skm-cat-track-wrap">
-              <div class="skm-cat-label">Mentalidad</div>
+              <div class="skm-cat-label">Self</div>
               <div class="skm-cat-track"><div class="skm-cat-fill skm-cat-fill--self" id="skm-fill-self"></div></div>
             </div>
-            <span class="skm-cat-count" id="skm-count-self">0/7</span>
+            <span class="skm-cat-count" id="skm-count-self">0/13</span>
           </div>
         </div>
       </div>
 
-      <!-- Tabs -->
-      <div class="skm-tabs" id="skm-tabs">
-        <button class="skm-tab skm-tab--active" data-tab="all">Todas</button>
-        <button class="skm-tab" data-tab="hard">💻 Técnico</button>
-        <button class="skm-tab" data-tab="soft">🗣️ Comunicación</button>
-        <button class="skm-tab" data-tab="self">🌱 Mentalidad</button>
+      <!-- Tabs + Filters -->
+      <div class="skm-toolbar">
+        <div class="skm-tabs" id="skm-tabs">
+          <button class="skm-tab skm-tab--active" data-tab="all">Todas</button>
+          <button class="skm-tab" data-tab="hard">💻 Hard</button>
+          <button class="skm-tab" data-tab="soft">🗣️ Soft</button>
+          <button class="skm-tab" data-tab="self">🌱 Self</button>
+        </div>
+        <div class="skm-filters" id="skm-filters">
+          <button class="skm-filter skm-filter--active" data-filter="all">Todas</button>
+          <button class="skm-filter" data-filter="unlocked">✓ Abiertas</button>
+          <button class="skm-filter" data-filter="locked">🔒 Cerradas</button>
+        </div>
       </div>
 
       <!-- Body -->
       <div class="skm-body">
-        <svg id="skill-tree-svg" class="skill-tree-svg"
-             viewBox="0 0 760 460" preserveAspectRatio="xMidYMid meet"></svg>
+        <div id="skill-tree-container" class="skill-tree-container"></div>
       </div>
 
       <!-- Footer -->

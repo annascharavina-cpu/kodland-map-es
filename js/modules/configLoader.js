@@ -59,7 +59,7 @@ export const configLoader = {
 
   _inline() {
     return {
-      courseId: 'default', courseName: 'Kodland Universe', version: '1.0',
+      courseId: 'default', courseName: 'Universo Kodland', version: '1.0',
       mapConfig: { width: 1280, height: 640, backgroundColor: '#0a0e1a' },
       worlds: Array.from({ length: 8 }, (_, i) => ({
         id: i + 1, name: `Mundo ${i + 1}`,
@@ -77,7 +77,7 @@ export const configLoader = {
         connectorLocked: '#1e2654', connectorUnlocked: '#6366f1'
       },
       texts: {
-        headerTitle: 'Mapa de aventuras', courseName: 'Kodland Universe',
+        headerTitle: 'Mapa de aventuras', courseName: 'Universo Kodland',
         statsCurrentWeek: 'Semana', statsWorlds: 'Mundos',
         statsElements: 'Elementos', statsProgress: 'Progreso',
         inputPlaceholder: 'Ingresa el código…', buttonApply: 'Aplicar',

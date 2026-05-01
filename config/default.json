@@ -1,6 +1,6 @@
 {
   "courseId": "kodland-demo",
-  "courseName": "La Grieta de la Creación · Kodland Universe",
+  "courseName": "La Grieta de la Creación · Universo Kodland",
   "version": "2.0",
 
   "supabase": {
@@ -45,7 +45,7 @@
       "imageUrl": "assets/v1_21.png",
       "x": 728, "y": 410, "width": 229, "height": 230,
       "desc": "La grieta no desapareció, pero dejó de ser una amenaza. Ahora muestra caminos ocultos dentro de los errores. Muchos «fracasos» resultaron ser versiones incompletas de futuros descubrimientos. El Abismo devuelve la capacidad de aprender a través de la dificultad.",
-      "lockedDesc": "En las profundidades pulsa una grieta violeta. Atrae ideas inconclusas, intentos rotos y todo lo que fue abandonado por los errores. Pero los antiguos registros dicen: quien no teme mirar al Abismo aprende a encontrar soluciones donde antes solo veía fracasos."
+      "lockedDesc": "En las profundidades pulsa una grieta violeta. Atrae ideas inconclusas, intentos fallidos y todo lo que fue abandonado por los errores. Pero los antiguos registros dicen: quien no teme mirar al abismo aprende a encontrar soluciones donde antes solo veía fracasos."
     },
     {
       "id": 5,
@@ -61,14 +61,14 @@
       "imageUrl": "assets/v1_26.png",
       "x": 808, "y": 19, "width": 328, "height": 183,
       "desc": "Los cristales del Pico recibieron la luz de los mundos restaurados y la reunieron en un único rayo. Desde la altura se ve: cada proyecto, cada habilidad deja una huella en el mapa. El Pico Celestial devuelve la visión estratégica: la comprensión de cómo las acciones individuales se convierten en maestría.",
-      "lockedDesc": "La isla de cristal flota en lo alto sobre el sector. Sus cimas apenas son visibles a través del frío resplandor y el camino hacia ellas está cortado. Antes, desde el Pico Celestial los Creadores veían cómo todos los mundos estaban conectados. Ahora esa perspectiva está perdida."
+      "lockedDesc": "La isla de cristal flota en lo alto sobre el sector. Sus picos apenas son visibles a través del frío resplandor y el camino hacia ellas está cortado. Antes, desde el Pico Celestial los Creadores veían cómo todos los mundos estaban conectados. Ahora esa perspectiva está perdida."
     },
     {
       "id": 7,
       "name": "Ruinas Perdidas",
       "imageUrl": "assets/v1_27.png",
       "x": 475, "y": 11, "width": 298, "height": 167,
-      "desc": "Los símbolos en las piedras formaron la primera parte de la crónica de Kodland Universe. El Núcleo se destruyó cuando los Creadores dejaron de conectar el conocimiento, la acción y la reflexión. Las Ruinas señalan la dirección de la próxima expedición.",
+      "desc": "Los símbolos en las piedras formaron la primera parte de la crónica del Universo Kodland. El Núcleo se destruyó cuando los Creadores dejaron de conectar el conocimiento, la acción y la reflexión. Las Ruinas señalan la dirección de la próxima expedición.",
       "lockedDesc": "Entre las torres derruidas parpadean los antiguos símbolos de los Creadores. Este mundo no está muerto: espera a quien pueda leer sus huellas. En las ruinas está escondido el conocimiento sobre por qué el Núcleo comenzó a destruirse."
     }
   ],
@@ -118,7 +118,7 @@
     {
       "id": "proj-6", "worldId": 6,
       "name": "Energicristal",
-      "desc": "La fuente de cristal en el borde del Pico Celestial. Recoge la energía de los mundos restaurados y la convierte en una señal para los sectores lejanos de Kodland Universe. Se agrietó y brilla de forma irregular — la señal no puede pasar más allá.",
+      "desc": "La fuente de cristal en el borde del Pico Celestial. Recoge la energía de los mundos restaurados y la convierte en una señal para los sectores lejanos del Universo Kodland. Se agrietó y brilla de forma irregular — la señal no puede pasar más allá. Aún no restaurado.",
       "broken": { "url": "assets/v1_37.png", "x": 1121, "y": 128, "width": 117, "height": 126 },
       "fixed":  { "url": "assets/v1_36.png", "x": 1120, "y": 128, "width": 120, "height": 126 }
     }
@@ -186,7 +186,7 @@
 
   "texts": {
     "headerTitle":       "Mapa de aventuras",
-    "courseName":        "La Grieta de la Creación · Kodland Universe",
+    "courseName":        "La Grieta de la Creación · Universo Kodland",
     "statsCurrentWeek":  "Semana",
     "statsWorlds":       "Mundos",
     "statsProjects":     "Proyectos",

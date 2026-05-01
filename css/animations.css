@@ -160,62 +160,6 @@
   animation: skmBadgePulse 2.2s ease-in-out infinite;
 }
 
-/* Node glow pulse */
-@keyframes skmGlowPulse {
-  0%, 100% { opacity: 0.13; transform: scale(1); }
-  50%       { opacity: 0.28; transform: scale(1.18); }
-}
-
-/* Emoji float */
-@keyframes skmEmojiFloat {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-2.5px); }
-}
-
-/* Node activation — the "wow" moment */
-@keyframes skmActivate {
-  0%   { transform: scale(0.15); opacity: 0; }
-  35%  { transform: scale(1.55); opacity: 1; }
-  55%  { transform: scale(0.88); }
-  75%  { transform: scale(1.12); }
-  90%  { transform: scale(0.97); }
-  100% { transform: scale(1);    opacity: 1; }
-}
-.skm-node.activating {
-  animation: skmActivate 0.85s cubic-bezier(0.34,1.4,0.64,1) forwards;
-  transform-box: fill-box;
-  transform-origin: center;
-}
-
-/* Line trace-in */
-@keyframes skmLineTrace {
-  to { stroke-dashoffset: 0; }
-}
-.skm-conn-new {
-  animation: skmLineTrace 0.45s ease-in-out forwards;
-  animation-delay: 0.12s;
-}
-
-/* Ripple burst */
-@keyframes skmRipple {
-  0%   { r: 16; stroke-opacity: 0.75; stroke-width: 2.5; }
-  100% { r: 62; stroke-opacity: 0;    stroke-width: 0.5; }
-}
-.skm-ripple {
-  animation: skmRipple 0.85s ease-out forwards;
-  pointer-events: none;
-}
-
-/* Spark particles */
-@keyframes skmSpark {
-  0%   { transform: translate(0, 0)                           scale(1);   opacity: 1; }
-  100% { transform: translate(var(--tx,0px), var(--ty,0px))   scale(0.3); opacity: 0; }
-}
-.skm-spark {
-  animation: skmSpark 0.55s ease-out forwards;
-  pointer-events: none;
-}
-
 /* Detail card entrance */
 @keyframes skmDetailIn {
   from { transform: translateY(14px); opacity: 0; }
@@ -230,21 +174,10 @@
   animation-delay: 0.7s;
 }
 
-@keyframes skmBadgePop {
-  from { transform: scale(0); opacity: 0; }
-  to   { transform: scale(1); opacity: 1; }
-}
-.skm-badge-new {
-  animation: skmBadgePop 0.4s cubic-bezier(0.34,1.56,0.64,1) both;
-  animation-delay: 0.5s;
-}
-
-@keyframes skmAvailPulse {
-  0%, 100% { stroke-opacity: 0.15; transform: scale(0.92); }
-  50%       { stroke-opacity: 0.55; transform: scale(1.08); }
-}
-.skm-avail-ring {
-  animation: skmAvailPulse 2.2s ease-in-out infinite;
-  transform-box: fill-box;
-  transform-origin: center;
+/* Skill item glow for newly unlocked */
+@keyframes skmItemGlow {
+  0%   { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.5); }
+  30%  { box-shadow: 0 0 16px 3px rgba(99, 102, 241, 0.35); }
+  70%  { box-shadow: 0 0 10px 1px rgba(99, 102, 241, 0.15); }
+  100% { box-shadow: none; }
 }
