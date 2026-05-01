@@ -238,3 +238,13 @@
   animation: skmBadgePop 0.4s cubic-bezier(0.34,1.56,0.64,1) both;
   animation-delay: 0.5s;
 }
+
+@keyframes skmAvailPulse {
+  0%, 100% { stroke-opacity: 0.15; transform: scale(0.92); }
+  50%       { stroke-opacity: 0.55; transform: scale(1.08); }
+}
+.skm-avail-ring {
+  animation: skmAvailPulse 2.2s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}

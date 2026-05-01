@@ -1191,16 +1191,20 @@ html, body {
 /* ── Header ── */
 .skm-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  padding: 18px 24px 14px;
+  padding: 18px 24px 12px;
   border-bottom: 1px solid rgba(99,102,241,0.14);
   flex-shrink: 0;
-  gap: 16px;
+  gap: 12px;
 }
-
 .skm-header-left { min-width: 0; }
-
+.skm-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
 .skm-new-badge {
   font-size: 10px;
   font-weight: 800;
@@ -1208,8 +1212,8 @@ html, body {
   color: #a855f7;
   text-transform: uppercase;
   margin-bottom: 3px;
+  min-height: 16px;
 }
-
 .skm-title {
   font-size: 19px;
   font-weight: 800;
@@ -1218,11 +1222,58 @@ html, body {
   margin: 0;
 }
 
-.skm-header-right {
+/* ── Progress Summary ── */
+.skm-progress-summary {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
+  padding: 12px 24px;
+  border-bottom: 1px solid rgba(99,102,241,0.1);
   flex-shrink: 0;
+}
+.skm-cat-bars {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.skm-cat-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.skm-cat-icon { font-size: 13px; flex-shrink: 0; }
+.skm-cat-track-wrap { flex: 1; }
+.skm-cat-label {
+  font-size: 9px;
+  font-weight: 700;
+  color: #8892bf;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 2px;
+}
+.skm-cat-track {
+  height: 5px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.skm-cat-fill {
+  height: 100%;
+  border-radius: 3px;
+  width: 0%;
+  transition: width 1s cubic-bezier(0.4,0,0.2,1);
+}
+.skm-cat-fill--hard { background: linear-gradient(90deg, #0891b2, #06b6d4); }
+.skm-cat-fill--soft { background: linear-gradient(90deg, #7c3aed, #8b5cf6); }
+.skm-cat-fill--self { background: linear-gradient(90deg, #d97706, #f59e0b); }
+.skm-cat-count {
+  font-size: 10px;
+  font-weight: 700;
+  color: #4a5280;
+  flex-shrink: 0;
+  min-width: 28px;
+  text-align: right;
 }
 
 /* Progress ring */
@@ -1266,6 +1317,54 @@ html, body {
   z-index: 1;
 }
 
+/* ── Tabs ── */
+.skm-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 10px 24px 0;
+  flex-shrink: 0;
+}
+.skm-tab {
+  padding: 5px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.03);
+  color: #4a5280;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+  font-family: var(--font);
+}
+.skm-tab:hover {
+  background: rgba(255,255,255,0.07);
+  color: #8892bf;
+}
+.skm-tab--active {
+  background: rgba(99,102,241,0.2);
+  border-color: rgba(99,102,241,0.4);
+  color: #a5b4fc;
+}
+
+/* ── Share button ── */
+.skm-share-btn {
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid rgba(99,102,241,0.3);
+  background: rgba(99,102,241,0.12);
+  color: #a5b4fc;
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s;
+  font-family: var(--font);
+  white-space: nowrap;
+}
+.skm-share-btn:hover {
+  background: rgba(99,102,241,0.22);
+  border-color: rgba(99,102,241,0.55);
+}
+
 .skm-close-btn {
   width: 30px;
   height: 30px;
@@ -1292,19 +1391,24 @@ html, body {
 .skm-body {
   flex: 1;
   overflow: hidden;
-  padding: 4px 12px 0;
+  padding: 6px 16px 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 220px;
+  min-height: 200px;
 }
 
 .skill-tree-svg {
   width: 100%;
   height: 100%;
-  max-height: 330px;
+  max-height: 380px;
   display: block;
   overflow: visible;
+}
+
+/* ── Available node ring animation ── */
+.skm-avail-ring {
+  animation: skmAvailPulse 2.2s ease-in-out infinite;
 }
 
 /* ── SVG node styles ── */

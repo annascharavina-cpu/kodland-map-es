@@ -639,71 +639,70 @@ function setEl(id, text) {
 // ═══════════════════════════════════════════════════════════════════════════════
 
 const SKM_SKILLS = [
-  { w:1, h:'Pensamiento algorítmico', s:'Comunicación básica',     e:'Confianza',               hFull:'Pensamiento algorítmico: secuencia, descomposición simple', sFull:'Comunicación básica (presentarse, hablar de sí mismo)', eFull:'Confianza, sentido de pertenencia' },
-  { w:2, h:'Programación por bloques',s:'Apertura al error',        e:'Mentalidad de crecimiento',hFull:'Programación por bloques: secuencias y eventos',          sFull:'Discusión abierta de errores',                       eFull:'Mentalidad de crecimiento (el error es normal)' },
-  { w:3, h:'Ciclos (bucles)',          s:'Preguntas claras',         e:'Persistencia',             hFull:'Ciclos (bucles)',                                         sFull:'Formular preguntas claramente',                      eFull:'Persistencia (intenta de nuevo)' },
-  { w:4, h:'Condiciones if/else',      s:'Feedback entre pares',    e:'Autorreflexión',           hFull:'Condiciones (if / else)',                                 sFull:'Feedback básico entre compañeros',                   eFull:'Autorreflexión' },
-  { w:5, h:'Variables y contadores',   s:'Explicar soluciones',     e:'Autorregulación',          hFull:'Variables (contadores, puntos)',                          sFull:'Explicar su solución',                               eFull:'Autorregulación (enfoque, atención)' },
-  { w:6, h:'Game design básico',       s:'Trabajo en pareja',       e:'Planificación',            hFull:'Fundamentos de game design (reglas, objetivos)',          sFull:'Trabajo en pareja',                                  eFull:'Planificación (dividir en pasos)' },
-  { w:7, h:'Creación mini-juego',      s:'Presentar proyecto',      e:'Constancia',               hFull:'Integración: creación de mini-juego',                     sFull:'Presentación del proyecto',                          eFull:'Completar tareas, constancia' },
+  { w:1, h:'Pensamiento algorítmico: secuencia, descomposición simple', s:'Comunicación básica (presentarse, hablar de sí mismo)', e:'Confianza, sentido de pertenencia' },
+  { w:2, h:'Programación por bloques: secuencias y eventos',            s:'Discusión abierta de errores',                          e:'Mentalidad de crecimiento (el error es normal)' },
+  { w:3, h:'Ciclos (bucles)',                                            s:'Formular preguntas claramente',                         e:'Persistencia (intenta de nuevo)' },
+  { w:4, h:'Condiciones (if / else)',                                    s:'Feedback básico entre compañeros',                      e:'Autorreflexión' },
+  { w:5, h:'Variables (contadores, puntos)',                             s:'Explicar su solución',                                  e:'Autorregulación (enfoque, atención)' },
+  { w:6, h:'Fundamentos de game design (reglas, objetivos)',             s:'Trabajo en pareja',                                     e:'Planificación (dividir en pasos)' },
+  { w:7, h:'Integración: creación de mini-juego',                       s:'Presentación del proyecto',                             e:'Completar tareas, constancia' },
 ];
 
 const SKM_PROJ_SKILLS = [
-  { w:1, h:'Algoritmo en proyecto',    s:'Contar mi proyecto',      e:'"¡Puedo hacerlo!"' },
-  { w:2, h:'Eventos e interactividad', s:'Compartir resultados',    e:'Aceptar errores' },
-  { w:3, h:'Ciclos en juego/animación',s:'Explicar un problema',    e:'Persistencia práctica' },
-  { w:4, h:'Condiciones para lógica',  s:'Dar y recibir feedback',  e:'Autorreflexión activa' },
-  { w:5, h:'Variables en juego',       s:'Explicar mecánicas',      e:'Autorregulación activa' },
-  { w:6, h:'Mecánica de juego',        s:'Colaborar en equipo',     e:'Planificación activa' },
-  { w:7, h:'Mini-juego completo',      s:'Presentar y responder',   e:'Orgullo del resultado' },
+  { w:1, h:'Construir un algoritmo simple en un proyecto',  s:'Contar sobre su proyecto',         e:'"¡Puedo hacerlo!" (autoeficacia)' },
+  { w:2, h:'Usar eventos e interactividad básica',          s:'Compartir resultados',              e:'Aceptar errores' },
+  { w:3, h:'Aplicar ciclos en juego/animación',             s:'Explicar un problema',              e:'Persistencia' },
+  { w:4, h:'Usar condiciones para lógica',                  s:'Dar y recibir feedback',            e:'Autorreflexión' },
+  { w:5, h:'Usar variables (puntos, contadores)',           s:'Explicar mecánicas del juego',      e:'Autorregulación' },
+  { w:6, h:'Crear mecánica básica de juego',                s:'Colaboración en equipo',            e:'Planificación' },
+  { w:7, h:'Crear un mini-juego completo',                  s:'Presentar y responder preguntas',   e:'Orgullo por el resultado' },
 ];
 
 const SKM_CHAL_SKILLS = [
-  { w:1, s:'Autopresentación',          e:'Confianza inicial' },
-  { w:2, s:'Compartir experiencias',    e:'Apertura al error' },
-  { w:3, s:'Pedir ayuda',              e:'Persistencia / consciencia' },
-  { w:4, s:'Colaborar y dar feedback', e:'Aceptar feedback' },
-  { w:5, s:'Reflexión del proceso',    e:'Autoconciencia' },
-  { w:6, s:'Reflexión en grupo',       e:'Entender cómo aprendo' },
-  { w:7, s:'Reflexión final',          e:'Completar con orgullo' },
+  { w:1, s:'Comunicación (autopresentación)',  e:'Confianza, pertenencia' },
+  { w:2, s:'Compartir experiencias',           e:'Mentalidad de crecimiento' },
+  { w:3, s:'Pedir ayuda correctamente',        e:'Persistencia, conciencia' },
+  { w:4, s:'Colaboración, feedback',           e:'Aceptar feedback' },
+  { w:5, s:'Reflexión sobre el proceso',       e:'Autoconciencia, autorregulación' },
+  { w:6, s:'Reflexión en grupo',               e:'Entender qué ayuda a aprender' },
 ];
 
 const SKM_TRACKS = [
-  { key:'hard', field:'h', label:'💻 TÉCNICO',       color:'#06b6d4', dark:'#083344', icon:'💻' },
-  { key:'soft', field:'s', label:'🗣️ COMUNICACIÓN',  color:'#8b5cf6', dark:'#2e1065', icon:'🗣️' },
-  { key:'self', field:'e', label:'🌱 MENTALIDAD',    color:'#f59e0b', dark:'#1c0d00', icon:'🌱' },
+  { key:'hard', field:'h', label:'💻 Técnico',       color:'#06b6d4', dark:'#083344', icon:'💻', colIdx:0 },
+  { key:'soft', field:'s', label:'🗣️ Comunicación',  color:'#8b5cf6', dark:'#2e1065', icon:'🗣️', colIdx:1 },
+  { key:'self', field:'e', label:'🌱 Mentalidad',     color:'#f59e0b', dark:'#1c0d00', icon:'🌱', colIdx:2 },
 ];
 
-// ── Build skill nodes in 3-track × 7-column grid ──────────────────────────────
+// ── Vertical 3-column skill grid layout ──────────────────────────────────────
+// Each column = one category; each row = one world tier (1–7, top→bottom)
+// viewBox: 0 0 760 460
+const SKM_COL_XS  = { hard: 130, soft: 380, self: 630 };
+const SKM_ROW_YS  = [60, 120, 180, 240, 300, 360, 420];
+const SKM_NODE_R  = 22;
+
 function skmBuildSkillNodes() {
   const nodes = [];
   const conns = [];
-  const trackYs   = { hard: 75, soft: 185, self: 295 };
-  const colXs     = [130, 220, 310, 400, 490, 580, 670];
 
   SKM_TRACKS.forEach(track => {
-    const y = trackYs[track.key];
-    colXs.forEach((x, i) => {
-      const worldId = i + 1;
-      const skill = SKM_SKILLS.find(s => s.w === worldId);
+    const cx = SKM_COL_XS[track.key];
+    SKM_ROW_YS.forEach((cy, i) => {
+      const worldId   = i + 1;
+      const skill     = SKM_SKILLS.find(s => s.w === worldId);
       const skillName = skill ? skill[track.field] : `M${worldId}`;
-      const id = `skill-${track.key}-${worldId}`;
+      const id        = `skill-${track.key}-${worldId}`;
       nodes.push({
-        id,
-        trackKey: track.key,
-        worldId,
-        skillName,
-        x, y, r: 18,
-        color: track.color,
-        dark:  track.dark
+        id, worldId,
+        x: cx, y: cy, r: SKM_NODE_R,
+        trackKey: track.key, color: track.color, dark: track.dark,
+        skillName, skillFull: skill ? skill[track.field] : skillName,
       });
-      // Horizontal connections within track
+      // Connect to previous node in same column
       if (i > 0) {
         conns.push({
-          from: `skill-${track.key}-${worldId - 1}`,
+          from: `skill-${track.key}-${i}`,
           to:   id,
-          trackKey: track.key,
-          color: track.color
+          color: track.color,
         });
       }
     });
@@ -712,156 +711,173 @@ function skmBuildSkillNodes() {
   return { nodes, conns };
 }
 
-// ── Is a skill node unlocked? (based on mundo unlock) ─────────────────────────
+// ── Unlock check helpers ──────────────────────────────────────────────────────
 function skmIsUnlocked(nodeId, appState) {
-  if (!nodeId.startsWith('skill-')) return false;
-  // skill-{track}-{worldId}
   const parts   = nodeId.split('-');
   const worldId = parseInt(parts[2]);
-  const ws = (appState.worldsState || []).find(w => w.worldId === worldId);
+  const ws      = (appState.worldsState || []).find(w => w.worldId === worldId);
   return !!ws?.unlocked;
 }
 
-// ── Has project/challenge badge for given world? ───────────────────────────────
+function skmIsAvailable(nodeId, appState) {
+  const parts   = nodeId.split('-');
+  const tier    = parseInt(parts[2]);
+  if (tier <= 1) return true;
+  const prevId  = `skill-${parts[1]}-${tier - 1}`;
+  return skmIsUnlocked(prevId, appState) && !skmIsUnlocked(nodeId, appState);
+}
+
 function skmHasBadge(type, worldId, appState) {
   const ws = (appState.worldsState || []).find(w => w.worldId === worldId);
   if (!ws) return false;
-  if (type === 'project')   return !!ws.elements?.project?.unlocked;
-  if (type === 'challenge') return !!ws.elements?.challenge?.unlocked;
-  return false;
+  return type === 'project'
+    ? !!ws.elements?.project?.unlocked
+    : !!ws.elements?.challenge?.unlocked;
 }
 
-// ── Progress % ────────────────────────────────────────────────────────────────
+// ── Compute skill progress percentages ───────────────────────────────────────
 function skmComputePct(appState) {
-  if (!config) return 0;
-  const totalW = (config.worlds     || []).length;
-  const totalP = (config.projects   || []).length;
-  const totalC = (config.challenges || []).length;
-  const total  = totalW + totalP + totalC;
-  if (!total) return 0;
-  let done = 0;
-  (appState.worldsState || []).forEach(ws => {
-    if (ws.unlocked)                       done++;
-    if (ws.elements?.project?.unlocked)    done++;
-    if (ws.elements?.challenge?.unlocked)  done++;
-  });
-  return Math.round((done / total) * 100);
+  const total   = 21;
+  const unlocked = (appState.worldsState || []).filter(w => w.unlocked).length * 3;
+  return Math.round((Math.min(unlocked, total) / total) * 100);
 }
 
-// ── SVG element helper ─────────────────────────────────────────────────────────
+function skmComputeCatPcts(appState) {
+  const worlds = (appState.worldsState || []);
+  const counts = { hard: 0, soft: 0, self: 0 };
+  worlds.forEach(w => { if (w.unlocked) { counts.hard++; counts.soft++; counts.self++; } });
+  return counts;
+}
+
+// ── Update progress ring ──────────────────────────────────────────────────────
+function skmUpdateRing(pct) {
+  const r             = 22;
+  const circumference = 2 * Math.PI * r;
+  const fill          = document.getElementById('skm-ring-fill');
+  const pctEl         = document.getElementById('skm-ring-pct');
+  if (fill) {
+    fill.style.strokeDasharray  = circumference;
+    fill.style.strokeDashoffset = (circumference * (1 - pct / 100)).toFixed(2);
+  }
+  if (pctEl) pctEl.textContent = `${pct}%`;
+}
+
+// ── Update category progress bars ────────────────────────────────────────────
+function skmUpdateCatBars(appState) {
+  const counts = skmComputeCatPcts(appState);
+  const total  = 7;
+  SKM_TRACKS.forEach(track => {
+    const n    = counts[track.key];
+    const fill = document.getElementById(`skm-fill-${track.key}`);
+    const cnt  = document.getElementById(`skm-count-${track.key}`);
+    if (fill) fill.style.width = `${Math.round((n / total) * 100)}%`;
+    if (cnt)  cnt.textContent  = `${n}/${total}`;
+  });
+}
+
+// ── Small star background ─────────────────────────────────────────────────────
+function skmStarsBg(w, h, count) {
+  const g = svgEl('g', { class: 'skm-stars-bg', 'pointer-events': 'none' });
+  for (let i = 0; i < count; i++) {
+    const r = Math.random() < 0.6 ? 0.8 : 1.3;
+    g.appendChild(svgEl('circle', {
+      cx:           (Math.random() * w).toFixed(1),
+      cy:           (Math.random() * h).toFixed(1),
+      r,
+      fill:         '#ffffff',
+      'fill-opacity': (0.06 + Math.random() * 0.12).toFixed(2),
+    }));
+  }
+  return g;
+}
+
+// ── SVG element helper ────────────────────────────────────────────────────────
 function svgEl(tag, attrs = {}) {
   const el = document.createElementNS('http://www.w3.org/2000/svg', tag);
   Object.entries(attrs).forEach(([k, v]) => el.setAttribute(k, v));
   return el;
 }
 
-// ── Stars background ──────────────────────────────────────────────────────────
-function skmStarsBg(w, h, count) {
-  const g = svgEl('g', { opacity: '0.45', 'pointer-events': 'none' });
-  for (let i = 0; i < count; i++) {
-    const x  = (Math.random() * w).toFixed(1);
-    const y  = (Math.random() * h).toFixed(1);
-    const r  = (0.4 + Math.random() * 1.4).toFixed(1);
-    const op = (0.18 + Math.random() * 0.55).toFixed(2);
-    g.appendChild(svgEl('circle', { cx: x, cy: y, r, fill: 'white', opacity: op }));
-  }
-  return g;
-}
-
-// ── Render 3-track skill grid SVG ────────────────────────────────────────────
+// ── Render SVG — 3 vertical columns ──────────────────────────────────────────
 function skmRenderSVG(newNodeIds, appState) {
   const svg = document.getElementById('skill-tree-svg');
   if (!svg) return;
-
-  const { nodes, conns } = skmBuildSkillNodes();
-
-  // Clear
   while (svg.firstChild) svg.removeChild(svg.firstChild);
 
-  // Defs
+  // Defs: gradients + glow filter
   const defs = svgEl('defs');
-
-  // Radial gradients per node
+  const { nodes, conns } = skmBuildSkillNodes();
   nodes.forEach(n => {
     const rg = svgEl('radialGradient', { id: `skm-rg-${n.id}`, cx: '38%', cy: '38%', r: '62%' });
     rg.appendChild(svgEl('stop', { offset: '0%',   'stop-color': n.color, 'stop-opacity': '0.95' }));
-    rg.appendChild(svgEl('stop', { offset: '100%', 'stop-color': n.dark,  'stop-opacity': '0.7'  }));
+    rg.appendChild(svgEl('stop', { offset: '100%', 'stop-color': n.dark,  'stop-opacity': '0.7' }));
     defs.appendChild(rg);
   });
-
-  // Glow filters
-  const fSm = svgEl('filter', { id: 'skm-fg-sm', x: '-60%', y: '-60%', width: '220%', height: '220%' });
-  fSm.appendChild(svgEl('feGaussianBlur', { in: 'SourceGraphic', stdDeviation: '3.5', result: 'blur' }));
-  defs.appendChild(fSm);
-
+  const fGlow = svgEl('filter', { id: 'skm-fg-sm', x: '-60%', y: '-60%', width: '220%', height: '220%' });
+  fGlow.appendChild(svgEl('feGaussianBlur', { in: 'SourceGraphic', stdDeviation: '3.5', result: 'blur' }));
+  defs.appendChild(fGlow);
   svg.appendChild(defs);
-  svg.appendChild(skmStarsBg(800, 370, 50));
+  svg.appendChild(skmStarsBg(760, 460, 55));
 
-  // Track lane backgrounds
-  const lanesG = svgEl('g', { id: 'skm-lanes', 'pointer-events': 'none' });
-  const trackYs = { hard: 75, soft: 185, self: 295 };
+  // Active tab
+  const activeTab = svg.getAttribute('data-tab') || 'all';
+
+  // Column backgrounds + labels
+  const lanesG = svgEl('g', { 'pointer-events': 'none' });
   SKM_TRACKS.forEach(track => {
-    const cy = trackYs[track.key];
-    const lane = svgEl('rect', {
-      x: '60', y: cy - 30,
-      width: '690', height: '58',
-      rx: '10',
-      fill: track.color,
-      'fill-opacity': '0.12'
-    });
-    lanesG.appendChild(lane);
+    const cx = SKM_COL_XS[track.key];
+    const visible = activeTab === 'all' || activeTab === track.key;
 
-    // Track label on the left
+    // Lane background
+    lanesG.appendChild(svgEl('rect', {
+      x: cx - 58, y: 35, width: 116, height: 400, rx: 14,
+      fill: track.color, 'fill-opacity': visible ? '0.08' : '0.02',
+    }));
+
+    // Column label
     const lbl = svgEl('text', {
-      x: '8', y: cy + 5,
-      'font-size': '8',
-      fill: track.color,
+      x: cx, y: 24,
+      'text-anchor': 'middle',
+      'font-size': '11',
+      fill: visible ? track.color : '#2a3060',
+      'fill-opacity': visible ? '1' : '0.3',
       'font-family': 'Inter, system-ui, sans-serif',
       'font-weight': '700',
-      'writing-mode': 'horizontal-tb'
     });
-    // Split label into icon and text lines
-    const labelParts = track.label.split(' ');
-    const iconPart   = labelParts[0];
-    const textPart   = labelParts.slice(1).join(' ');
-    const tspan1 = svgEl('tspan', { x: '8', dy: '-6' });
-    tspan1.textContent = iconPart;
-    const tspan2 = svgEl('tspan', { x: '8', dy: '11', 'font-size': '7' });
-    tspan2.textContent = textPart;
-    lbl.appendChild(tspan1);
-    lbl.appendChild(tspan2);
+    lbl.textContent = track.label;
     lanesG.appendChild(lbl);
   });
   svg.appendChild(lanesG);
 
-  // Connection lines (horizontal within each track)
+  // Connection lines (vertical, within each column)
   const connsG = svgEl('g', { id: 'skm-conns' });
   conns.forEach(conn => {
     const fn = nodes.find(n => n.id === conn.from);
     const tn = nodes.find(n => n.id === conn.to);
     if (!fn || !tn) return;
-
     const fromUnlocked = skmIsUnlocked(conn.from, appState);
     const toUnlocked   = skmIsUnlocked(conn.to,   appState);
-    const isNew = newNodeIds.includes(conn.to);
+    const isNew        = newNodeIds.includes(conn.to);
+    const trackKey     = conn.from.split('-')[1];
+    const visible      = activeTab === 'all' || activeTab === trackKey;
 
-    const line = svgEl('line', { x1: fn.x, y1: fn.y, x2: tn.x, y2: tn.y });
+    const line = svgEl('line', { x1: fn.x, y1: fn.y + fn.r, x2: tn.x, y2: tn.y - tn.r });
 
     if (fromUnlocked && toUnlocked) {
-      line.setAttribute('stroke', isNew ? conn.color : '#6366f1');
+      line.setAttribute('stroke', isNew ? conn.color : (visible ? conn.color : '#2a3060'));
       line.setAttribute('stroke-width',   '2');
-      line.setAttribute('stroke-opacity', isNew ? '0.8' : '0.4');
+      line.setAttribute('stroke-opacity', isNew ? '0.85' : (visible ? '0.4' : '0.08'));
       if (isNew) {
-        const len = Math.hypot(tn.x - fn.x, tn.y - fn.y).toFixed(1);
+        const len = Math.abs(tn.y - fn.y - fn.r - tn.r).toFixed(1);
         line.style.strokeDasharray  = len;
         line.style.strokeDashoffset = len;
         line.classList.add('skm-conn-new');
       }
     } else {
-      line.setAttribute('stroke', '#1e2654');
-      line.setAttribute('stroke-width',   '1');
-      line.setAttribute('stroke-opacity', '0.3');
-      line.setAttribute('stroke-dasharray', '3 5');
+      line.setAttribute('stroke',          visible ? '#2a3060' : '#111630');
+      line.setAttribute('stroke-width',    '1.5');
+      line.setAttribute('stroke-opacity',  visible ? '0.35' : '0.1');
+      line.setAttribute('stroke-dasharray', '4 6');
     }
     connsG.appendChild(line);
   });
@@ -869,129 +885,163 @@ function skmRenderSVG(newNodeIds, appState) {
 
   // Nodes
   const nodesG = svgEl('g', { id: 'skm-nodes' });
-
   nodes.forEach(node => {
-    const unlocked = skmIsUnlocked(node.id, appState);
-    const isNew    = newNodeIds.includes(node.id);
+    const unlocked  = skmIsUnlocked(node.id, appState);
+    const available = !unlocked && skmIsAvailable(node.id, appState);
+    const isNew     = newNodeIds.includes(node.id);
+    const trackKey  = node.trackKey;
+    const visible   = activeTab === 'all' || activeTab === trackKey;
 
     const hasProjBadge = skmHasBadge('project',   node.worldId, appState);
     const hasChalBadge = skmHasBadge('challenge',  node.worldId, appState);
     const isProjNew    = newNodeIds.includes(`badge-project-${node.worldId}`);
     const isChalNew    = newNodeIds.includes(`badge-challenge-${node.worldId}`);
 
-    // Outer wrapper: position only
+    // Outer group: position only
     const wrap = svgEl('g', { transform: `translate(${node.x},${node.y})` });
+    wrap.style.opacity = visible ? '1' : '0.08';
 
-    // Inner group: animation target
+    // Inner group: animation + interaction target
     const g = svgEl('g', {
-      class:     `skm-node skm-node--skill${unlocked ? ' unlocked' : ' locked'}${isNew ? ' is-new' : ''}`,
-      'data-id': node.id
+      class: [
+        'skm-node',
+        unlocked  ? 'unlocked'  : '',
+        available ? 'available' : '',
+        isNew     ? 'is-new'    : '',
+        `skm-node--skill`,
+      ].filter(Boolean).join(' '),
+      'data-id': node.id,
     });
     if (isNew) g.style.opacity = '0';
 
-    // Glow ring (unlocked, not new)
+    // Glow circle for unlocked nodes
     if (unlocked && !isNew) {
       g.appendChild(svgEl('circle', {
-        r: node.r + 9,
-        fill: node.color,
-        'fill-opacity': '0.1',
-        class: 'skm-node-glow',
-        filter: 'url(#skm-fg-sm)'
+        r: node.r + 10, fill: node.color,
+        'fill-opacity': '0.1', class: 'skm-node-glow',
+        filter: 'url(#skm-fg-sm)',
       }));
     }
 
-    // Body circle
+    // Available ring pulse
+    if (available) {
+      g.appendChild(svgEl('circle', {
+        r: node.r + 7,
+        fill: 'none',
+        stroke: node.color,
+        'stroke-width': '1.5',
+        'stroke-opacity': '0.4',
+        class: 'skm-avail-ring',
+      }));
+    }
+
+    // Main body circle
     const circle = svgEl('circle', { r: node.r });
     if (unlocked) {
-      circle.setAttribute('fill', `url(#skm-rg-${node.id})`);
-      circle.setAttribute('stroke', node.color);
-      circle.setAttribute('stroke-width', '1.5');
-      circle.setAttribute('stroke-opacity', '0.75');
+      circle.setAttribute('fill',           `url(#skm-rg-${node.id})`);
+      circle.setAttribute('stroke',         node.color);
+      circle.setAttribute('stroke-width',   '1.5');
+      circle.setAttribute('stroke-opacity', '0.8');
+    } else if (available) {
+      circle.setAttribute('fill',           '#0d1232');
+      circle.setAttribute('stroke',         node.color);
+      circle.setAttribute('stroke-width',   '1.5');
+      circle.setAttribute('stroke-opacity', '0.5');
+      circle.setAttribute('stroke-dasharray', '4 3');
     } else {
-      circle.setAttribute('fill', '#060a1a');
-      circle.setAttribute('stroke', '#2a3060');
-      circle.setAttribute('stroke-width', '1.5');
-      circle.setAttribute('stroke-opacity', '0.4');
+      circle.setAttribute('fill',           '#060a1a');
+      circle.setAttribute('stroke',         '#1e2654');
+      circle.setAttribute('stroke-width',   '1.5');
+      circle.setAttribute('stroke-opacity', '0.3');
     }
     g.appendChild(circle);
 
-    // World number label above
+    // Lock icon for locked nodes
+    if (!unlocked && !available) {
+      const lock = svgEl('text', {
+        y: 5, 'text-anchor': 'middle',
+        'font-size': '12', 'fill-opacity': '0.25', fill: '#8892bf',
+        'font-family': 'Inter, system-ui, sans-serif',
+      });
+      lock.textContent = '🔒';
+      g.appendChild(lock);
+    }
+
+    // World number label above node
     const worldLbl = svgEl('text', {
       y: -(node.r + 5),
-      'text-anchor':      'middle',
-      'font-size':        '7',
-      fill:               unlocked ? node.color : '#2a3060',
-      'fill-opacity':     unlocked ? '0.7' : '0.4',
-      'font-family':      'Inter, system-ui, sans-serif',
-      'font-weight':      '600'
+      'text-anchor': 'middle', 'font-size': '7',
+      fill: unlocked ? node.color : (available ? node.color : '#2a3060'),
+      'fill-opacity': unlocked ? '0.75' : (available ? '0.5' : '0.3'),
+      'font-family': 'Inter, system-ui, sans-serif', 'font-weight': '600',
     });
     worldLbl.textContent = `M${node.worldId}`;
     g.appendChild(worldLbl);
 
-    // Skill name below (truncated to 12 chars)
-    const truncName = node.skillName.length > 12 ? node.skillName.slice(0, 11) + '…' : node.skillName;
-    const nameLbl = svgEl('text', {
-      y: node.r + 12,
-      'text-anchor':  'middle',
-      'font-size':    '8',
-      fill:           unlocked ? '#a5b4fc' : '#2a3060',
-      'font-family':  'Inter, system-ui, sans-serif'
-    });
-    nameLbl.textContent = truncName;
-    g.appendChild(nameLbl);
+    // Skill name below node (truncated)
+    if (unlocked || available) {
+      const maxLen    = 14;
+      const truncName = node.skillName.length > maxLen
+        ? node.skillName.slice(0, maxLen - 1) + '…'
+        : node.skillName;
+      const nameLbl = svgEl('text', {
+        y: node.r + 13,
+        'text-anchor': 'middle', 'font-size': '7.5',
+        fill: unlocked ? '#a5b4fc' : '#4a5280',
+        'font-family': 'Inter, system-ui, sans-serif',
+      });
+      nameLbl.textContent = truncName;
+      g.appendChild(nameLbl);
+    }
+
+    // Checkmark for fully unlocked nodes
+    if (unlocked && !isNew) {
+      const check = svgEl('text', {
+        y: 4, 'text-anchor': 'middle',
+        'font-size': '13', fill: '#ffffff', 'fill-opacity': '0.7',
+        'font-family': 'Inter, system-ui, sans-serif',
+      });
+      check.textContent = '✓';
+      g.appendChild(check);
+    }
 
     // Project badge (top-right, green)
     if (hasProjBadge) {
-      const pb = svgEl('circle', {
-        cx: (node.r * 0.65).toFixed(1),
-        cy: -(node.r * 0.65).toFixed(1),
-        r: '5',
-        fill: '#10b981',
-        stroke: '#022c22',
-        'stroke-width': '1',
-        class: `skm-badge-proj${isProjNew ? ' skm-badge-new' : ''}`
-      });
-      g.appendChild(pb);
+      g.appendChild(svgEl('circle', {
+        cx: (node.r * 0.65).toFixed(1), cy: -(node.r * 0.65).toFixed(1),
+        r: '5', fill: '#10b981', stroke: '#022c22', 'stroke-width': '1',
+        class: `skm-badge-proj${isProjNew ? ' skm-badge-new' : ''}`,
+      }));
     }
 
-    // Challenge badge (top-left, amber) — only for soft/self tracks
-    if (hasChalBadge && node.trackKey !== 'hard') {
-      const cb = svgEl('circle', {
-        cx: -(node.r * 0.65).toFixed(1),
-        cy: -(node.r * 0.65).toFixed(1),
-        r: '4',
-        fill: '#f59e0b',
-        stroke: '#1c0d00',
-        'stroke-width': '1',
-        class: `skm-badge-chal${isChalNew ? ' skm-badge-new' : ''}`
-      });
-      g.appendChild(cb);
+    // Challenge badge (top-left, amber) — soft/self tracks only
+    if (hasChalBadge && trackKey !== 'hard') {
+      g.appendChild(svgEl('circle', {
+        cx: -(node.r * 0.65).toFixed(1), cy: -(node.r * 0.65).toFixed(1),
+        r: '4', fill: '#f59e0b', stroke: '#1c0d00', 'stroke-width': '1',
+        class: `skm-badge-chal${isChalNew ? ' skm-badge-new' : ''}`,
+      }));
     }
 
     wrap.appendChild(g);
     nodesG.appendChild(wrap);
   });
-
   svg.appendChild(nodesG);
 }
 
-// ── Activate new skill nodes with staggered animation ─────────────────────────
+// ── Activate new nodes with staggered animation ───────────────────────────────
 function skmActivateNodes(newNodeIds, appState) {
   const svg = document.getElementById('skill-tree-svg');
   if (!svg) return;
-
-  // Skill nodes (IDs starting with 'skill-')
-  const skillIds = newNodeIds.filter(id => id.startsWith('skill-'));
   const { nodes: allNodes } = skmBuildSkillNodes();
 
+  const skillIds = newNodeIds.filter(id => id.startsWith('skill-'));
   skillIds.forEach((nodeId, idx) => {
     const node = allNodes.find(n => n.id === nodeId);
     if (!node) return;
-
     setTimeout(() => {
       const g = svg.querySelector(`.skm-node[data-id="${nodeId}"]`);
       if (!g) return;
-
       g.style.opacity = '';
       g.classList.add('activating');
 
@@ -1000,10 +1050,7 @@ function skmActivateNodes(newNodeIds, appState) {
         setTimeout(() => {
           const ripple = svgEl('circle', {
             cx: node.x, cy: node.y, r: node.r + 2,
-            fill: 'none',
-            stroke: node.color,
-            'stroke-width': '2.5',
-            class: 'skm-ripple'
+            fill: 'none', stroke: node.color, 'stroke-width': '2.5', class: 'skm-ripple',
           });
           svg.appendChild(ripple);
           setTimeout(() => { if (ripple.parentNode) ripple.parentNode.removeChild(ripple); }, 900);
@@ -1027,14 +1074,13 @@ function skmActivateNodes(newNodeIds, appState) {
     }, idx * 150);
   });
 
-  // Badge IDs (badge-project-N or badge-challenge-N)
+  // Badge activations
   const badgeIds = newNodeIds.filter(id => id.startsWith('badge-'));
   badgeIds.forEach(badgeId => {
-    const parts = badgeId.split('-');
-    const type    = parts[1]; // 'project' or 'challenge'
+    const parts   = badgeId.split('-');
+    const type    = parts[1];
     const worldId = parseInt(parts[2]);
-    const cls = type === 'project' ? '.skm-badge-proj.skm-badge-new' : '.skm-badge-chal.skm-badge-new';
-    // Find all matching badge elements for this world
+    const cls     = type === 'project' ? '.skm-badge-proj.skm-badge-new' : '.skm-badge-chal.skm-badge-new';
     svg.querySelectorAll(`.skm-node[data-id$="-${worldId}"] ${cls}`).forEach(el => {
       el.style.transform = 'scale(0)';
       el.style.opacity   = '0';
@@ -1046,7 +1092,7 @@ function skmActivateNodes(newNodeIds, appState) {
   });
 }
 
-// ── Show newly earned skills in footer detail card ────────────────────────────
+// ── Show detail card for a skill ──────────────────────────────────────────────
 function skmShowSkillDetail(newNodeIds, appState) {
   const iconEl = document.getElementById('skm-detail-icon');
   const typeEl = document.getElementById('skm-detail-type');
@@ -1057,10 +1103,8 @@ function skmShowSkillDetail(newNodeIds, appState) {
   const badgeIds = newNodeIds.filter(id => id.startsWith('badge-'));
 
   if (skillIds.length > 0) {
-    // Skill nodes — group by track
     const earnedTracks = [];
     const earnedNames  = [];
-
     SKM_TRACKS.forEach(track => {
       const ids = skillIds.filter(id => id.startsWith(`skill-${track.key}-`));
       if (!ids.length) return;
@@ -1071,15 +1115,12 @@ function skmShowSkillDetail(newNodeIds, appState) {
         if (skill) earnedNames.push(skill[track.field]);
       });
     });
-
-    const icons = earnedTracks.join('');
-    if (iconEl) iconEl.textContent = icons || '✨';
-    if (typeEl) typeEl.textContent = 'HABILIDADES GANADAS';
+    if (iconEl) iconEl.textContent = earnedTracks.join('') || '✨';
+    if (typeEl) { typeEl.textContent = 'HABILIDADES GANADAS'; typeEl.style.color = ''; }
     if (nameEl) nameEl.textContent = earnedNames[0] || '—';
     if (descEl) descEl.textContent = earnedNames.slice(1).join(' · ');
 
   } else if (badgeIds.length > 0) {
-    // Badge-only update (project or challenge)
     const badgeNames = [];
     badgeIds.forEach(id => {
       const parts   = id.split('-');
@@ -1095,37 +1136,47 @@ function skmShowSkillDetail(newNodeIds, appState) {
     });
     const isBadgeProj = badgeIds.some(id => id.startsWith('badge-project-'));
     if (iconEl) iconEl.textContent = isBadgeProj ? '🛠' : '⭐';
-    if (typeEl) typeEl.textContent = isBadgeProj ? 'PROYECTO COMPLETADO' : 'ARTEFACTO HALLADO';
+    if (typeEl) { typeEl.textContent = isBadgeProj ? 'PROYECTO COMPLETADO' : 'ARTEFACTO HALLADO'; typeEl.style.color = ''; }
     if (nameEl) nameEl.textContent = badgeNames[0] || '—';
     if (descEl) descEl.textContent = badgeNames.slice(1).join(' · ');
 
   } else {
-    // Standalone / no new nodes
-    const unlockedCount = (appState.worldsState || []).reduce((n, ws) => {
-      if (ws.unlocked) n += 3;
-      return n;
-    }, 0);
+    const unlockedCount = (appState.worldsState || []).filter(w => w.unlocked).length * 3;
     if (iconEl) iconEl.textContent = '💻🗣️🌱';
-    if (typeEl) typeEl.textContent = 'TUS HABILIDADES';
+    if (typeEl) { typeEl.textContent = 'TUS HABILIDADES'; typeEl.style.color = ''; }
     if (nameEl) nameEl.textContent = `${unlockedCount} habilidades desbloqueadas`;
     if (descEl) descEl.textContent = 'Toca un nodo para ver los detalles';
   }
 }
 
-// ── Update the progress ring ──────────────────────────────────────────────────
-function skmUpdateRing(pct) {
-  const r             = 22;
-  const circumference = 2 * Math.PI * r;
-  const fill          = document.getElementById('skm-ring-fill');
-  const pctEl         = document.getElementById('skm-ring-pct');
-  if (fill) {
-    fill.style.strokeDasharray  = circumference;
-    fill.style.strokeDashoffset = (circumference * (1 - pct / 100)).toFixed(2);
-  }
-  if (pctEl) pctEl.textContent = `${pct}%`;
+// ── Show detail for a clicked node ───────────────────────────────────────────
+function skmShowNodeDetail(nodeId) {
+  const iconEl = document.getElementById('skm-detail-icon');
+  const typeEl = document.getElementById('skm-detail-type');
+  const nameEl = document.getElementById('skm-detail-name');
+  const descEl = document.getElementById('skm-detail-desc');
+
+  const parts    = nodeId.split('-');
+  const trackKey = parts[1];
+  const worldId  = parseInt(parts[2]);
+  const track    = SKM_TRACKS.find(t => t.key === trackKey);
+  const skill    = SKM_SKILLS.find(s => s.w === worldId);
+  if (!track || !skill) return;
+
+  // Also show project/challenge skills for same world
+  const ps = SKM_PROJ_SKILLS.find(s => s.w === worldId);
+  const cs = SKM_CHAL_SKILLS.find(s => s.w === worldId);
+  const extras = [];
+  if (ps && ps[track.field]) extras.push(ps[track.field]);
+  if (cs && cs[track.field]) extras.push(cs[track.field]);
+
+  if (iconEl) iconEl.textContent = track.icon;
+  if (typeEl) { typeEl.textContent = `${track.label} · Mundo ${worldId}`; typeEl.style.color = track.color; }
+  if (nameEl) nameEl.textContent = skill[track.field];
+  if (descEl) descEl.textContent = extras.length ? '+ ' + extras.join(' · ') : `Nivel ${worldId}`;
 }
 
-// ── Open the Skill Map modal (from code unlock) ───────────────────────────────
+// ── Open Skill Map after unlock ───────────────────────────────────────────────
 function showSkillMapModal(unlockType, worldId, elementType, successMsg) {
   const modal = document.getElementById('skill-map-modal');
   if (!modal || !config) {
@@ -1134,13 +1185,12 @@ function showSkillMapModal(unlockType, worldId, elementType, successMsg) {
     return;
   }
 
-  // Determine new node IDs
   let newNodeIds;
   if (unlockType === 'world') {
     newNodeIds = [
       `skill-hard-${worldId}`,
       `skill-soft-${worldId}`,
-      `skill-self-${worldId}`
+      `skill-self-${worldId}`,
     ];
   } else if (elementType === 'project') {
     newNodeIds = [`badge-project-${worldId}`];
@@ -1151,7 +1201,6 @@ function showSkillMapModal(unlockType, worldId, elementType, successMsg) {
   const appState = state.get();
   const pct      = skmComputePct(appState);
 
-  // Badge text
   const badgeEl = document.getElementById('skm-new-badge');
   if (badgeEl) {
     const typeKey = unlockType === 'world' ? 'world' : (elementType || 'project');
@@ -1159,26 +1208,24 @@ function showSkillMapModal(unlockType, worldId, elementType, successMsg) {
     badgeEl.textContent = labels[typeKey] || '✨ NUEVA HABILIDAD';
   }
 
-  // Progress ring
   skmUpdateRing(Math.max(0, pct - 5));
+  skmUpdateCatBars(appState);
 
-  // Render SVG
+  const svg = document.getElementById('skill-tree-svg');
+  if (svg) svg.setAttribute('data-tab', 'all');
+  document.querySelectorAll('.skm-tab').forEach(t => {
+    t.classList.toggle('skm-tab--active', t.dataset.tab === 'all');
+  });
+
   skmRenderSVG(newNodeIds, appState);
-
-  // Show modal
   modal.classList.remove('skm-leaving', 'hidden');
 
-  // Animate ring
   requestAnimationFrame(() => { setTimeout(() => skmUpdateRing(pct), 80); });
-
-  // Show detail
   skmShowSkillDetail(newNodeIds, appState);
-
-  // Activate nodes after entrance
   setTimeout(() => skmActivateNodes(newNodeIds, appState), 420);
 }
 
-// ── Open skill map standalone ─────────────────────────────────────────────────
+// ── Open Skill Map standalone (from button) ───────────────────────────────────
 function openSkillMapStandalone() {
   const modal = document.getElementById('skill-map-modal');
   if (!modal || !config) return;
@@ -1190,15 +1237,20 @@ function openSkillMapStandalone() {
   const badgeEl = document.getElementById('skm-new-badge');
   if (badgeEl) badgeEl.textContent = '🗺️ MIS HABILIDADES';
 
+  const svg = document.getElementById('skill-tree-svg');
+  if (svg) svg.setAttribute('data-tab', 'all');
+  document.querySelectorAll('.skm-tab').forEach(t => {
+    t.classList.toggle('skm-tab--active', t.dataset.tab === 'all');
+  });
+
   skmUpdateRing(pct);
+  skmUpdateCatBars(appState);
   skmRenderSVG(newNodeIds, appState);
-
   modal.classList.remove('skm-leaving', 'hidden');
-
   skmShowSkillDetail(newNodeIds, appState);
 }
 
-// ── Close the Skill Map modal ─────────────────────────────────────────────────
+// ── Close Skill Map modal ─────────────────────────────────────────────────────
 function closeSkillMapModal() {
   const modal = document.getElementById('skill-map-modal');
   if (!modal || modal.classList.contains('hidden')) return;
@@ -1209,34 +1261,18 @@ function closeSkillMapModal() {
   }, 280);
 }
 
-// ── Show detail for a specific node when clicked ─────────────────────────────
-function skmShowNodeDetail(nodeId) {
-  const iconEl = document.getElementById('skm-detail-icon');
-  const typeEl = document.getElementById('skm-detail-type');
-  const nameEl = document.getElementById('skm-detail-name');
-  const descEl = document.getElementById('skm-detail-desc');
-
-  const parts   = nodeId.split('-');   // ['skill','hard','1']
-  const trackKey = parts[1];
-  const worldId  = parseInt(parts[2]);
-
-  const track = SKM_TRACKS.find(t => t.key === trackKey);
-  const skill = SKM_SKILLS.find(s => s.w === worldId);
-  if (!track || !skill) return;
-
-  const fieldFull = trackKey + 'Full';
-  const fullDesc  = skill[fieldFull] || skill[track.field];
-
-  if (iconEl) iconEl.textContent = track.icon;
-  if (typeEl) { typeEl.textContent = track.label; typeEl.style.color = track.color; }
-  if (nameEl) nameEl.textContent = skill[track.field];
-  if (descEl) descEl.textContent = fullDesc !== skill[track.field] ? fullDesc : `Mundo ${worldId}`;
+// ── Show detail for a specific clicked node ───────────────────────────────────
+function skmHandleNodeClick(nodeId) {
+  document.querySelectorAll('.skm-node--selected').forEach(n => n.classList.remove('skm-node--selected'));
+  const g = document.querySelector(`#skill-tree-svg .skm-node[data-id="${nodeId}"]`);
+  if (g) g.classList.add('skm-node--selected');
+  skmShowNodeDetail(nodeId);
 }
 
-// ── Wire skill map events ─────────────────────────────────────────────────────
+// ── Wire Skill Map events ─────────────────────────────────────────────────────
 function wireSkillMap() {
-  document.getElementById('skills-btn')?.addEventListener('click',      openSkillMapStandalone);
-  document.getElementById('skm-close-btn')?.addEventListener('click',    closeSkillMapModal);
+  document.getElementById('skills-btn')?.addEventListener('click', openSkillMapStandalone);
+  document.getElementById('skm-close-btn')?.addEventListener('click', closeSkillMapModal);
   document.getElementById('skm-continue-btn')?.addEventListener('click', closeSkillMapModal);
   document.getElementById('skill-map-modal')?.addEventListener('click', e => {
     if (e.target === document.getElementById('skill-map-modal')) closeSkillMapModal();
@@ -1245,18 +1281,31 @@ function wireSkillMap() {
     if (e.key === 'Escape') closeSkillMapModal();
   });
 
+  // Tab switching
+  document.getElementById('skm-tabs')?.addEventListener('click', e => {
+    const btn = e.target.closest('.skm-tab');
+    if (!btn) return;
+    const tab = btn.dataset.tab;
+    document.querySelectorAll('.skm-tab').forEach(t => {
+      t.classList.toggle('skm-tab--active', t.dataset.tab === tab);
+    });
+    const svg = document.getElementById('skill-tree-svg');
+    if (svg) {
+      svg.setAttribute('data-tab', tab);
+      skmRenderSVG([], state.get());
+    }
+  });
+
   // Node click → show detail
   document.getElementById('skill-tree-svg')?.addEventListener('click', e => {
     const nodeG = e.target.closest('.skm-node[data-id]');
-    if (!nodeG) return;
-    const nodeId = nodeG.getAttribute('data-id');
-    if (!nodeId.startsWith('skill-')) return;
-    // Only respond to unlocked nodes
-    if (!nodeG.classList.contains('unlocked')) return;
-    // Highlight selection
-    document.querySelectorAll('.skm-node--selected').forEach(n => n.classList.remove('skm-node--selected'));
-    nodeG.classList.add('skm-node--selected');
-    skmShowNodeDetail(nodeId);
+    if (!nodeG || !nodeG.classList.contains('unlocked')) return;
+    skmHandleNodeClick(nodeG.getAttribute('data-id'));
+  });
+
+  // Share button → copy share URL (same as main share button)
+  document.getElementById('skm-share-btn')?.addEventListener('click', () => {
+    document.getElementById('share-btn')?.click();
   });
 }
 

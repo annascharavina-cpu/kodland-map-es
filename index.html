@@ -187,34 +187,76 @@
     <div class="skm-backdrop"></div>
     <div class="skm-container">
 
+      <!-- Header -->
       <div class="skm-header">
         <div class="skm-header-left">
           <div class="skm-new-badge" id="skm-new-badge">✨ NUEVA HABILIDAD</div>
-          <h2 class="skm-title">Árbol de Habilidades</h2>
+          <h2 class="skm-title">Skill Map</h2>
         </div>
         <div class="skm-header-right">
-          <div class="skm-ring-wrap">
-            <svg class="skm-ring-svg" viewBox="0 0 56 56">
-              <defs>
-                <linearGradient id="skm-ring-grad" x1="0%" y1="100%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#6366f1"/>
-                  <stop offset="100%" stop-color="#a855f7"/>
-                </linearGradient>
-              </defs>
-              <circle class="skm-ring-bg"   cx="28" cy="28" r="22"/>
-              <circle class="skm-ring-fill" id="skm-ring-fill" cx="28" cy="28" r="22"/>
-            </svg>
-            <span class="skm-ring-pct" id="skm-ring-pct">0%</span>
-          </div>
+          <button class="skm-share-btn" id="skm-share-btn" title="Compartir con familia">🔗 Compartir</button>
           <button class="skm-close-btn" id="skm-close-btn" title="Cerrar">✕</button>
         </div>
       </div>
 
-      <div class="skm-body">
-        <svg id="skill-tree-svg" class="skill-tree-svg"
-             viewBox="0 0 800 370" preserveAspectRatio="xMidYMid meet"></svg>
+      <!-- Progress Summary -->
+      <div class="skm-progress-summary">
+        <div class="skm-ring-wrap">
+          <svg class="skm-ring-svg" viewBox="0 0 56 56">
+            <defs>
+              <linearGradient id="skm-ring-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#6366f1"/>
+                <stop offset="100%" stop-color="#a855f7"/>
+              </linearGradient>
+            </defs>
+            <circle class="skm-ring-bg"   cx="28" cy="28" r="22"/>
+            <circle class="skm-ring-fill" id="skm-ring-fill" cx="28" cy="28" r="22"/>
+          </svg>
+          <span class="skm-ring-pct" id="skm-ring-pct">0%</span>
+        </div>
+        <div class="skm-cat-bars">
+          <div class="skm-cat-bar">
+            <span class="skm-cat-icon" style="color:#06b6d4">💻</span>
+            <div class="skm-cat-track-wrap">
+              <div class="skm-cat-label">Técnico</div>
+              <div class="skm-cat-track"><div class="skm-cat-fill skm-cat-fill--hard" id="skm-fill-hard"></div></div>
+            </div>
+            <span class="skm-cat-count" id="skm-count-hard">0/7</span>
+          </div>
+          <div class="skm-cat-bar">
+            <span class="skm-cat-icon" style="color:#8b5cf6">🗣️</span>
+            <div class="skm-cat-track-wrap">
+              <div class="skm-cat-label">Comunicación</div>
+              <div class="skm-cat-track"><div class="skm-cat-fill skm-cat-fill--soft" id="skm-fill-soft"></div></div>
+            </div>
+            <span class="skm-cat-count" id="skm-count-soft">0/7</span>
+          </div>
+          <div class="skm-cat-bar">
+            <span class="skm-cat-icon" style="color:#f59e0b">🌱</span>
+            <div class="skm-cat-track-wrap">
+              <div class="skm-cat-label">Mentalidad</div>
+              <div class="skm-cat-track"><div class="skm-cat-fill skm-cat-fill--self" id="skm-fill-self"></div></div>
+            </div>
+            <span class="skm-cat-count" id="skm-count-self">0/7</span>
+          </div>
+        </div>
       </div>
 
+      <!-- Tabs -->
+      <div class="skm-tabs" id="skm-tabs">
+        <button class="skm-tab skm-tab--active" data-tab="all">Todas</button>
+        <button class="skm-tab" data-tab="hard">💻 Técnico</button>
+        <button class="skm-tab" data-tab="soft">🗣️ Comunicación</button>
+        <button class="skm-tab" data-tab="self">🌱 Mentalidad</button>
+      </div>
+
+      <!-- Body -->
+      <div class="skm-body">
+        <svg id="skill-tree-svg" class="skill-tree-svg"
+             viewBox="0 0 760 460" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+
+      <!-- Footer -->
       <div class="skm-footer">
         <div class="skm-detail-card" id="skm-detail-card">
           <div class="skm-detail-icon" id="skm-detail-icon">✨</div>
